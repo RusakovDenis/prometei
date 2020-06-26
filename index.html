@@ -11,7 +11,6 @@
   <title>Прометей | ЕГЭ 2021</title>
   <meta name="theme-color" content="#FFFFFF">
   <link rel="shortcut icon" href="img/favicon.ico">
-  <meta charset="UTF-8">
   <!-- Critical css -->
   <style>
     .preloader {
@@ -92,7 +91,7 @@
   <div class="wrap">
     <header class="header">
       <div class="logo-wrap">
-        <img class="logo" src="/img/logo.png" alt="Логотип">
+        <img class="logo" src="img/logo.png" alt="Логотип">
       </div>
       <div class="header__bottom">
         <img class="logo-small" src="img/logo-small.png" alt="Логотип">
@@ -120,7 +119,9 @@
             </li>
           </ul>
         </div>
-        <button class="toggle-menu"><span class="toggle-menu__line"></span></button>
+        <button class="toggle-menu" aria-label="Открыть меню">
+          <span class="toggle-menu__line"></span>
+        </button>
         <div class="menu-left">
           <nav class="menu-left__nav">
             <ul class="menu-left__list">
@@ -146,16 +147,18 @@
       <div class="preview__content">
         <img class="preview__img" src="img/preview.jpg" alt="Как мы работаем">
       </div>
-      <a class="link-bottom" href="#about-us"></a>
+      <a class="link-bottom" href="#about-us" aria-label="Перейти к блоку 'О нас'"></a>
     </section>
-    <section class="about-us section" id="about-us">
+    <section class=" about-us section" id="about-us">
       <img class="about-us__img" src="img/about-us.webp" alt="Мы">
       <div class="about-us__card">
         <h2 class="about-us__title">О нас</h2>
-        <p class="about-us__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        <p class="about-us__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+          tempor
           incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
           laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-          esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+          qui
           officia deserunt mollit anim id est laborum.</p>
         <a class="link" href="#">
           <span class="link__text">Перейти</span>
@@ -235,6 +238,7 @@
       </div>
     </section>
     <section class="services section" id="services">
+      <h2 class="title">Услуги</h2>
       <div class="services-wrap">
         <article class="services__card">
           <a class="services__link" href="">
@@ -371,7 +375,7 @@
     <section class="info section" id="info">
       <h2 class="title">Информация</h2>
       <div class="info-wrap">
-        <table class="table" border="0">
+        <table class="table">
           <tbody>
             <tr class="table__row">
               <td class="table__cell">Полное наименование организации</td>
@@ -470,8 +474,14 @@
       </svg></button>
   </div>
   <!-- Preloader -->
-  <script
-    async>const preloader = document.querySelector(".preloader"); window.onload = () => { setTimeout(() => { preloader.classList.remove("preloader--show"); document.body.style.removeProperty("overflow-y"); }, 1500); setTimeout(() => { preloader.style.display = "none"; }, 2000); }</script>
+  <script async>
+    const preloader = document.querySelector(".preloader"); window.onload = () => {
+      setTimeout(() => {
+        preloader.classList.remove("preloader--show"); document.body.style.removeProperty("overflow-y");
+      }, 1500);
+      setTimeout(() => { preloader.style.display = "none"; }, 2000);
+    }
+  </script>
   <script src="js/imask.min.js"></script>
   <script src="js/common.js"></script>
 </body>
