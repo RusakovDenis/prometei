@@ -21,7 +21,7 @@
       bottom: 0;
       left: 0;
       z-index: -1;
-      background-color: #fff;
+      background-color: #ffffff;
       opacity: 0;
       -webkit-transition: 0.3s;
       -o-transition: 0.3s;
@@ -87,22 +87,22 @@
 <body>
   <div class="preloader preloader--show" style="display: none;">
     <div class="preloader__circle"></div>
-    <img src="img/logo-small.png" alt="">
+    <img src="img/logo-small.png" alt="Логотип">
   </div>
   <div class="wrap">
     <header class="header">
       <div class="logo-wrap">
-        <img class="logo" src="img/logo.png" alt="Логотип">
+        <img class="logo" src="/img/logo.png" alt="Логотип">
       </div>
       <div class="header__bottom">
         <img class="logo-small" src="img/logo-small.png" alt="Логотип">
         <nav class="nav">
           <ul class="nav__list">
-            <li class="nav__item"><a class="nav__link nav__link--active" href="">Главная</a></li>
-            <li class="nav__item"><a class="nav__link" href="">О компании</a></li>
-            <li class="nav__item"><a class="nav__link" href="">Преподаватели</a></li>
-            <li class="nav__item"><a class="nav__link" href="">Цены</a></li>
-            <li class="nav__item"><a class="nav__link" href="">Контакты</a></li>
+            <li class="nav__item"><a class="nav__link nav__link--active" href="index.html">Главная</a></li>
+            <li class="nav__item"><a class="nav__link" href="about-us.html">О компании</a></li>
+            <li class="nav__item"><a class="nav__link" href="teachers.html">Преподаватели</a></li>
+            <li class="nav__item"><a class="nav__link" href="prices.html">Цены</a></li>
+            <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
           </ul>
         </nav>
         <div class="lang">
@@ -121,36 +121,35 @@
           </ul>
         </div>
         <button class="toggle-menu"><span class="toggle-menu__line"></span></button>
-        <div class="menu-right">
-          <nav>
-            <ul>
-              <li class="menu-right__item"><a class="menu-right__link menu-right__link--active" href="">Главная</a>
+        <div class="menu-left">
+          <nav class="menu-left__nav">
+            <ul class="menu-left__list">
+              <li class="menu-left__item"><a class="menu-left__link menu-left__link--active"
+                  href="index.html">Главная</a>
               </li>
-              <li class="menu-right__item"><a class="menu-right__link" href="">О компании</a></li>
-              <li class="menu-right__item"><a class="menu-right__link" href="">Преподаватели</a></li>
-              <li class="menu-right__item"><a class="menu-right__link" href="">Цены</a></li>
-              <li class="menu-right__item"><a class="menu-right__link" href="">Контакты</a></li>
+              <li class="menu-left__item"><a class="menu-left__link" href="about-us.html">О компании</a></li>
+              <li class="menu-left__item"><a class="menu-left__link" href="teachers.html">Преподаватели</a></li>
+              <li class="menu-left__item"><a class="menu-left__link" href="prices.html">Цены</a></li>
+              <li class="menu-left__item"><a class="menu-left__link" href="contacts.html">Контакты</a></li>
             </ul>
           </nav>
         </div>
       </div>
     </header>
-    <section class="preview">
+    <section class="preview section" id="preview">
       <div class="preview__card">
         <h1 class="preview__title">Прометей</h1>
         <p class="preview__description">Комплексная подготовка к
           ОГЭ и ЕГЭ в группе и индивидуально</p>
-        <button class="btn">Записаться
-          <div class="fill-one"></div>
-        </button>
+        <button class="btn">Записаться</button>
       </div>
       <div class="preview__content">
-        <img class="preview__img framed" src="img/preview.jpg" alt="">
+        <img class="preview__img" src="img/preview.jpg" alt="Как мы работаем">
       </div>
-      <button class="btn-bottom"></button>
+      <a class="link-bottom" href="#about-us"></a>
     </section>
-    <section class="about-us">
-      <img class="about-us__img" src="img/about-us.webp" alt="">
+    <section class="about-us section" id="about-us">
+      <img class="about-us__img" src="img/about-us.webp" alt="Мы">
       <div class="about-us__card">
         <h2 class="about-us__title">О нас</h2>
         <p class="about-us__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -159,21 +158,22 @@
           esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
           officia deserunt mollit anim id est laborum.</p>
         <a class="link" href="#">
-          <span>Ссылка на сторонний ресурс</span>
-          <svg width="13px" height="10px" viewBox="0 0 13 10">
+          <span class="link__text">Перейти</span>
+          <svg class="link__icon" width="13px" height="10px" viewBox="0 0 13 10">
             <path d="M1,5 L11,5"></path>
             <polyline points="8 1 12 5 8 9"></polyline>
           </svg>
         </a>
       </div>
     </section>
-    <section class="teachers">
+    <section class="teachers section" id="teachers">
       <h2 class="title">Преподаватели</h2>
       <div class="teachers-wrap">
         <div class="teachers__item">
           <img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
           <h3 class="teachers__name">Имя Фамилия</h3>
           <p class="teachers__info">Математик</p>
+          <hr class="teachers__separator">
           <p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
@@ -182,6 +182,7 @@
           <img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
           <h3 class="teachers__name">Имя Фамилия</h3>
           <p class="teachers__info">Математик</p>
+          <hr class="teachers__separator">
           <p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
@@ -190,6 +191,7 @@
           <img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
           <h3 class="teachers__name">Имя Фамилия</h3>
           <p class="teachers__info">Математик</p>
+          <hr class="teachers__separator">
           <p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
@@ -198,6 +200,7 @@
           <img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
           <h3 class="teachers__name">Имя Фамилия</h3>
           <p class="teachers__info">Математик</p>
+          <hr class="teachers__separator">
           <p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
@@ -206,6 +209,7 @@
           <img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
           <h3 class="teachers__name">Имя Фамилия</h3>
           <p class="teachers__info">Математик</p>
+          <hr class="teachers__separator">
           <p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
@@ -214,6 +218,7 @@
           <img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
           <h3 class="teachers__name">Имя Фамилия</h3>
           <p class="teachers__info">Математик</p>
+          <hr class="teachers__separator">
           <p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
@@ -222,15 +227,15 @@
           <img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
           <h3 class="teachers__name">Имя Фамилия</h3>
           <p class="teachers__info">Математик</p>
+          <hr class="teachers__separator">
           <p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
         </div>
       </div>
     </section>
-    <section class="services">
-      <h2 class="title">Услуги</h2>
-      <div class="services-grid">
+    <section class="services section" id="services">
+      <div class="services-wrap">
         <article class="services__card">
           <a class="services__link" href="">
             <h3 class="services__subtitle">ЕГЭ 2021</h3>
@@ -323,26 +328,38 @@
         </article>
       </div>
     </section>
-    <section class="contacts">
+    <section class="contacts section" id="contacts">
       <h2 class="title">Контакты</h2>
       <div class="contacts-wrap">
         <form class="form" method="post" action="">
-          <label class="form__label" for="name">Имя</label>
-          <input class="form__input" id="name" type="text" name="name" required="">
-          <label class="form__label" for="phone">Телефон</label>
           <div class="form__field">
-            <span class="form__code">+7</span>
-            <input class="form__input form__phone" id="phone" type="tel" name="phone" placeholder="(___) ___-__-__"
-              required="" minlength="10">
+            <label class="form__label" for="name">Имя</label>
+            <input class="form__input" id="name" type="text" name="name" required="">
+            <span class="error-msg"></span>
           </div>
-          <label class="form__label" for="email">E-mail</label>
-          <input class="form__input" id="email" type="email" name="email" required="">
-          <label for="checkbox">
-            <input class="checkbox" id="checkbox" type="checkbox" required="">
-            <span class="custom-checkbox"></span>
-            <span class="checkbox-text">Даю согласие на обработку <a href="" target="_blank">персональных
-                данных</a></span>
-          </label>
+          <div class="form__field">
+            <label class="form__label" for="phone">Телефон</label>
+            <div class="form__field-phone">
+              <span class="form__code">+7</span>
+              <input class="form__input form__phone" id="phone" type="tel" name="phone" placeholder="(___) ___-__-__"
+                required="" minlength="10">
+              <span class="error-msg"></span>
+            </div>
+          </div>
+          <div class="form__field">
+            <label class="form__label" for="email">E-mail</label>
+            <input class="form__input" id="email" type="email" name="email" required="">
+            <span class="error-msg"></span>
+          </div>
+          <div class="form__field">
+            <label for="checkbox">
+              <input class="checkbox" id="checkbox" type="checkbox" required="">
+              <span class="custom-checkbox"></span>
+              <span class="checkbox-text">Даю согласие на обработку <a href="" target="_blank">персональных
+                  данных</a></span>
+            </label>
+            <span class="error-msg"></span>
+          </div>
           <button class="btn" type="submit">Отправить</button>
         </form>
         <div class="contacts__content">
@@ -351,54 +368,54 @@
         </div>
       </div>
     </section>
-    <section class="info">
+    <section class="info section" id="info">
       <h2 class="title">Информация</h2>
       <div class="info-wrap">
-        <table class="info__table" border="0">
+        <table class="table" border="0">
           <tbody>
-            <tr>
-              <td>Полное наименование организации</td>
-              <td>Прометей</td>
+            <tr class="table__row">
+              <td class="table__cell">Полное наименование организации</td>
+              <td class="table__cell">Прометей</td>
             </tr>
-            <tr>
-              <td>Полное наименование организации</td>
-              <td>Прометей</td>
+            <tr class="table__row">
+              <td class="table__cell">Полное наименование организации</td>
+              <td class="table__cell">Прометей</td>
             </tr>
-            <tr>
-              <td>Полное наименование организации</td>
-              <td>Прометей</td>
+            <tr class="table__row">
+              <td class="table__cell">Полное наименование организации</td>
+              <td class="table__cell">Прометей</td>
             </tr>
-            <tr>
-              <td>Полное наименование организации</td>
-              <td>Прометей</td>
+            <tr class="table__row">
+              <td class="table__cell">Полное наименование организации</td>
+              <td class="table__cell">Прометей</td>
             </tr>
-            <tr>
-              <td>Полное наименование организации</td>
-              <td>Прометей</td>
+            <tr class="table__row">
+              <td class="table__cell">Полное наименование организации</td>
+              <td class="table__cell">Прометей</td>
             </tr>
-            <tr>
-              <td>Полное наименование организации</td>
-              <td>Прометей</td>
+            <tr class="table__row">
+              <td class="table__cell">Полное наименование организации</td>
+              <td class="table__cell">Прометей</td>
             </tr>
-            <tr>
-              <td>Полное наименование организации</td>
-              <td>Прометей</td>
+            <tr class="table__row">
+              <td class="table__cell">Полное наименование организации</td>
+              <td class="table__cell">Прометей</td>
             </tr>
-            <tr>
-              <td>Полное наименование организации</td>
-              <td>Прометей</td>
+            <tr class="table__row">
+              <td class="table__cell">Полное наименование организации</td>
+              <td class="table__cell">Прометей</td>
             </tr>
-            <tr>
-              <td>Полное наименование организации</td>
-              <td>Прометей</td>
+            <tr class="table__row">
+              <td class="table__cell">Полное наименование организации</td>
+              <td class="table__cell">Прометей</td>
             </tr>
-            <tr>
-              <td>Полное наименование организации</td>
-              <td>Прометей</td>
+            <tr class="table__row">
+              <td class="table__cell">Полное наименование организации</td>
+              <td class="table__cell">Прометей</td>
             </tr>
-            <tr>
-              <td>Полное наименование организации</td>
-              <td>Прометей</td>
+            <tr class="table__row">
+              <td class="table__cell">Полное наименование организации</td>
+              <td class="table__cell">Прометей</td>
             </tr>
           </tbody>
         </table>

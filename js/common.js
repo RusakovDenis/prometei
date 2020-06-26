@@ -16,12 +16,6 @@ if (window.matchMedia("(max-width: 991px)").matches) {
 
   toggleMenu.addEventListener("click", () => {
     toggleMenu.classList.toggle("toggle-menu--active");
-
-    if (dropdownMenu.classList.contains("toggle-menu--show")) {
-      dropdownMenu.classList.remove("toggle-menu--show");
-    } else {
-      dropdownMenu.classList.add("toggle-menu--show");
-    }
   });
 
   document.addEventListener("mouseup", (e) => {
@@ -31,9 +25,18 @@ if (window.matchMedia("(max-width: 991px)").matches) {
   });
 }
 
+// Link scroll
+document.querySelector(".link-bottom").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  document.querySelector(this.hash).scrollIntoView({
+    behavior: "smooth"
+  });
+});
+
 // Mask phone
 let phoneMask = IMask(document.querySelector(".form__phone"), {
-  mask: "+7 (000) 000-00-00",
+  mask: "(000) 000-00-00",
   lazy: false
 });
 
@@ -67,15 +70,7 @@ window.onscroll = () => {
   btnTopShow();
 }
 
-
 // Left menu
-// const menuBtn = document.querySelector(".menu__btn");
-// const menu = document.querySelector(".menu");
-
-// menuBtn.addEventListener("click", () => {
-// 	menu.classList.toggle("menu--active");
-// });
-
 function toggleClassMenu() {
   myMenu.classList.add("menu--animatable");
 
@@ -90,8 +85,84 @@ function OnTransitionEnd() {
   myMenu.classList.remove("menu--animatable");
 }
 
-var myMenu = document.querySelector(".menu-right");
+var myMenu = document.querySelector(".menu-left");
 var oppMenu = document.querySelector(".toggle-menu");
 myMenu.addEventListener("transitionend", OnTransitionEnd, false);
 oppMenu.addEventListener("click", toggleClassMenu, false);
 myMenu.addEventListener("click", toggleClassMenu, false);
+
+const form = document.querySelector("form");
+const name = document.querySelector('input[type="text"]');
+const email = document.querySelector('input[type="email"]');
+const password = document.querySelector(".password");
+const password2 = document.querySelector(".password2");
+
+function showError(input, msg) {
+  const parent = input.parentElement;
+  parent.className = "error";
+  const error = parent.querySelector(".error-msg");
+  error.textContent = msg;
+  error.style.display = "block";
+
+  const timer = setTimeout(() => {
+    error.style.display = "none";
+    parent.className = "";
+    clearTimeout(timer);
+  }, 4000);
+}
+
+function showSuccess(input) {
+  const parent = input.parentElement;
+  parent.className = "success";
+}
+
+function checkEmail(input) {
+  const regex = /^\S+@\S+\.\S+$/;
+
+  regex.test(input.value.trim())
+    ? showSuccess(input)
+    : showError(input, `Email isn't valid`);
+}
+
+function checkRequired(inputArr) {
+  inputArr.forEach((input) => {
+    input.value.trim() === ""
+      ? showError(input, `${getFieldName(input)} is required`)
+      : showSuccess(input);
+  });
+}
+
+function checkLength(input, min, max) {
+  if (input.value.length < min) {
+    showError(
+      input,
+      `${getFieldName(input)} must be at least ${min} characters`
+    );
+  } else if (input.value.length > max) {
+    showError(
+      input,
+      `${getFieldName(input)} must be less than ${max} characters`
+    );
+  } else {
+    showSuccess(input);
+  }
+}
+
+function checkPasswordsMatch(input, input2) {
+  if (input.value !== input2.value) showError(input2, `Passwords don't match`);
+}
+
+function getFieldName(input) {
+  return input.previousElementSibling.textContent;
+}
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  checkRequired([email, password2]);
+  checkLength(name, 3, 15);
+  checkLength(password, 6, 25);
+  checkEmail(email);
+  checkPasswordsMatch(password, password2);
+});
+
