@@ -28,7 +28,7 @@
     }
 
     .preloader--show {
-      z-index: 2;
+      z-index: 5;
       visibility: visible;
       opacity: 1;
       -webkit-transition: 0.3s;
@@ -36,10 +36,11 @@
       transition: 0.3s
     }
 
-    .preloader__leaf {
+    .preloader__img {
+      width: 40px;
       position: absolute;
-      top: calc(50% - 21px);
-      left: calc(50% - 25px)
+      top: calc(50% - 20px);
+      left: calc(50% - 20px)
     }
 
     @-webkit-keyframes preloaderSpin {
@@ -75,7 +76,7 @@
       text-align: center;
       border: 4px solid rgba(0, 0, 0, .1);
       border-radius: 100%;
-      border-left-color: var(--main-color, #22A200);
+      border-left-color: #201f87;
       -webkit-animation: preloaderSpin 1.2s linear infinite;
       animation: preloaderSpin 1.2s linear infinite
     }
@@ -83,10 +84,10 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-  <div class="preloader preloader--show" style="display: none;">
+<body style="overflow-y:hidden;">
+  <div class="preloader preloader--show">
     <div class="preloader__circle"></div>
-    <img src="img/logo-small.png" alt="Логотип">
+    <img class="preloader__img" src="img/logo-small.png" alt="Логотип">
   </div>
   <div class="wrap">
     <header class="header">
@@ -138,14 +139,16 @@
       </div>
     </header>
     <section class="preview section" id="preview">
-      <div class="preview__card">
-        <h1 class="preview__title">Прометей</h1>
-        <p class="preview__description">Комплексная подготовка к
-          ОГЭ и ЕГЭ в группе и индивидуально</p>
-        <button class="btn">Записаться</button>
-      </div>
-      <div class="preview__content">
-        <img class="preview__img" src="img/preview.jpg" alt="Как мы работаем">
+      <div class="preview-wrap">
+        <div class="preview__card">
+          <h1 class="preview__title">Прометей</h1>
+          <p class="preview__description">Комплексная подготовка к
+            ОГЭ и ЕГЭ в группе и индивидуально</p>
+          <button class="btn">Записаться</button>
+        </div>
+        <div class="preview__content">
+          <img class="preview__img" src="img/preview.jpg" alt="Как мы работаем">
+        </div>
       </div>
       <a class="link-bottom" href="#about-us" aria-label="Перейти к блоку 'О нас'"></a>
     </section>
@@ -241,9 +244,9 @@
       <h2 class="title">Услуги</h2>
       <div class="services-wrap">
         <article class="services__card">
-          <a class="services__link" href="">
+          <a class="services__link" href="#">
             <h3 class="services__subtitle">ЕГЭ 2021</h3>
-            <p class="services__description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             </p>
             <svg class="services__arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
               aria-labelledby="arrowRightIconTitle" stroke="#fff" stroke-width="1.5" fill="none">
@@ -254,9 +257,9 @@
           </a>
         </article>
         <article class="services__card">
-          <a class="services__link" href="">
+          <a class="services__link" href="#">
             <h3 class="services__subtitle">ЕГЭ 2021</h3>
-            <p class="services__description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             </p>
             <svg class="services__arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
               aria-labelledby="arrowRightIconTitle" stroke="#fff" stroke-width="1.5" fill="none">
@@ -267,9 +270,9 @@
           </a>
         </article>
         <article class="services__card">
-          <a class="services__link" href="">
+          <a class="services__link" href="#">
             <h3 class="services__subtitle">ЕГЭ 2021</h3>
-            <p class="services__description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             </p>
             <svg class="services__arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
               aria-labelledby="arrowRightIconTitle" stroke="#fff" stroke-width="1.5" fill="none">
@@ -280,9 +283,9 @@
           </a>
         </article>
         <article class="services__card">
-          <a class="services__link" href="">
+          <a class="services__link" href="#">
             <h3 class="services__subtitle">ЕГЭ 2021</h3>
-            <p class="services__description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             </p>
             <svg class="services__arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
               aria-labelledby="arrowRightIconTitle" stroke="#fff" stroke-width="1.5" fill="none">
@@ -293,9 +296,9 @@
           </a>
         </article>
         <article class="services__card">
-          <a class="services__link" href="">
+          <a class="services__link" href="#">
             <h3 class="services__subtitle">ЕГЭ 2021</h3>
-            <p class="services__description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             </p>
             <svg class="services__arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
               aria-labelledby="arrowRightIconTitle" stroke="#fff" stroke-width="1.5" fill="none">
@@ -306,9 +309,10 @@
           </a>
         </article>
         <article class="services__card">
-          <a class="services__link" href="">
+          <a class="services__link" href="#">
             <h3 class="services__subtitle">ЕГЭ 2021</h3>
-            <p class="services__description"></p>
+            <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            </p>
             <svg class="services__arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
               aria-labelledby="arrowRightIconTitle" stroke="#fff" stroke-width="1.5" fill="none">
               <path d="M15 18l6-6-6-6"></path>
@@ -318,9 +322,9 @@
           </a>
         </article>
         <article class="services__card">
-          <a class="services__link" href="">
+          <a class="services__link" href="#">
             <h3 class="services__subtitle">ЕГЭ 2021</h3>
-            <p class="services__description">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             </p>
             <svg class="services__arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
               aria-labelledby="arrowRightIconTitle" stroke="#fff" stroke-width="1.5" fill="none">
@@ -359,7 +363,8 @@
             <label for="checkbox">
               <input class="checkbox" id="checkbox" type="checkbox" required="">
               <span class="custom-checkbox"></span>
-              <span class="checkbox-text">Даю согласие на обработку <a href="" target="_blank">персональных
+              <span class="checkbox-text">Даю согласие на обработку <a class="form__link" href="#"
+                  target="_blank">персональных
                   данных</a></span>
             </label>
             <span class="error-msg"></span>
