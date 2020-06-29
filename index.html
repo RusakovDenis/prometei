@@ -9,6 +9,8 @@
   <meta name="keywords" content="">
   <meta name="robots" content="index, follow">
   <title>Прометей | ЕГЭ 2021</title>
+  <link rel="stylesheet" href="css/glide.core.min.css">
+  <link rel="stylesheet" href="css/glide.theme.min.css">
   <meta name="theme-color" content="#FFFFFF">
   <link rel="shortcut icon" href="img/favicon.ico">
   <!-- Critical css -->
@@ -84,27 +86,27 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body style="overflow-y:hidden;">
-  <div class="preloader preloader--show">
+<body>
+  <div class="preloader preloader--show" style="display: none;">
     <div class="preloader__circle"></div>
     <img class="preloader__img" src="img/logo-small.png" alt="Логотип">
   </div>
-  <div class="wrap">
-    <header class="header">
-      <div class="logo-wrap">
-        <img class="logo" src="img/logo.png" alt="Логотип">
+  <header class="header">
+    <div class="header-wrap">
+      <div class="logo">
+        <img class="logo__icon" src="img/logo-icon.png" alt="Логотип">
+        <img class="logo__text" src="img/logo-text.png" alt="Логотип текст">
       </div>
-      <div class="header__bottom">
-        <img class="logo-small" src="img/logo-small.png" alt="Логотип">
-        <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav__item"><a class="nav__link nav__link--active" href="index.html">Главная</a></li>
-            <li class="nav__item"><a class="nav__link" href="about-us.html">О компании</a></li>
-            <li class="nav__item"><a class="nav__link" href="teachers.html">Преподаватели</a></li>
-            <li class="nav__item"><a class="nav__link" href="prices.html">Цены</a></li>
-            <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
-          </ul>
-        </nav>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="#about-us">О компании</a></li>
+          <li class="nav__item"><a class="nav__link" href="#teachers">Преподаватели</a></li>
+          <li class="nav__item"><a class="nav__link" href="#services">Услуги</a></li>
+          <li class="nav__item"><a class="nav__link" href="#info">Информация</a></li>
+          <li class="nav__item"><a class="nav__link" href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="header__right">
         <div class="lang">
           <img class="lang__img" src="img/rus.gif" alt="Русский флаг">
           <ul class="lang__list">
@@ -137,22 +139,59 @@
           </nav>
         </div>
       </div>
-    </header>
-    <section class="preview section" id="preview">
-      <div class="preview-wrap">
-        <div class="preview__card">
-          <h1 class="preview__title">Прометей</h1>
-          <p class="preview__description">Комплексная подготовка к
-            ОГЭ и ЕГЭ в группе и индивидуально</p>
-          <button class="btn">Записаться</button>
+    </div>
+  </header>
+  <section class="slider" id="slider">
+    <div class="glide">
+      <div class="glide__track" data-glide-el="track">
+        <div class="glide__slides">
+          <div class="slider__item glide__slide">
+            <div class="slider__content">
+              <div class="slider__card">
+                <h1 class="slider__title">Прометей</h1>
+                <p class="slider__description">Комплексная подготовка к
+                  ОГЭ и ЕГЭ в группе и индивидуально</p>
+                <button class="btn">Записаться</button>
+              </div>
+            </div>
+          </div>
+          <div class="slider__item glide__slide">
+            <div class="slider__content">
+              <div class="slider__card">
+                <h1 class="slider__title">Прометей</h1>
+                <p class="slider__description">Комплексная подготовка к
+                  ОГЭ и ЕГЭ в группе и индивидуально</p>
+                <button class="btn">Записаться</button>
+              </div>
+            </div>
+          </div>
+          <div class="slider__item glide__slide">
+            <div class="slider__content">
+              <div class="slider__card">
+                <h1 class="slider__title">Прометей</h1>
+                <p class="slider__description">Комплексная подготовка к
+                  ОГЭ и ЕГЭ в группе и индивидуально</p>
+                <button class="btn">Записаться</button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="preview__content">
-          <img class="preview__img" src="img/preview.jpg" alt="Как мы работаем">
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow slider__arrow--prev" data-glide-dir="<" aria-label="Следующий отзыв"></button>
+          <button class="glide__arrow slider__arrow--next" data-glide-dir=">" aria-label="Предыдущий отзыв"></button>
+        </div>
+        <div class="glide__bullets" data-glide-el="controls[nav]">
+          <button class="glide__bullet" data-glide-dir="=0"></button>
+          <button class="glide__bullet" data-glide-dir="=1"></button>
+          <button class="glide__bullet" data-glide-dir="=2"></button>
+          <button class="glide__bullet" data-glide-dir="=3"></button>
         </div>
       </div>
-      <a class="link-bottom" href="#about-us" aria-label="Перейти к блоку 'О компании'"></a>
-    </section>
-    <section class=" about-us section" id="about-us">
+    </div>
+    <a class="link-bottom" href="#about-us" aria-label="Перейти к блоку 'О компании'"></a>
+  </section>
+  <div class="wrap">
+    <section class="about-us" id="about-us">
       <img class="about-us__img" src="img/about-us.webp" alt="Мы">
       <div class="about-us__card">
         <h2 class="about-us__title">О компании</h2>
@@ -172,7 +211,7 @@
         </a>
       </div>
     </section>
-    <section class="teachers section" id="teachers">
+    <section class="teachers" id="teachers">
       <h2 class="title">Преподаватели</h2>
       <div class="teachers-wrap">
         <div class="teachers__item">
@@ -240,134 +279,173 @@
         </div>
       </div>
     </section>
-    <section class="services section" id="services">
+    <section class="services" id="services">
       <h2 class="title">Услуги</h2>
       <div class="services-wrap">
-        <article class="services__card">
+        <div class="services__card">
           <a class="services__link" href="#">
             <h3 class="services__subtitle">ЕГЭ 2021</h3>
             <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor
+              incididunt ut labore et dolore
+              magna
             </p>
-            <svg class="services__arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-              stroke="#fff" stroke-width="1.5" fill="none">
-              <path d="M15 18l6-6-6-6"></path>
-              <path d="M3 12h17"></path>
-              <path stroke-linecap="round" d="M21 12h-1"></path>
-            </svg>
+            <button class="services__btn btn-service-open">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
+                stroke="none">
+                <path
+                  d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
+              </svg>
+            </button>
           </a>
-        </article>
-        <article class="services__card">
+        </div>
+        <div class="services__card">
           <a class="services__link" href="#">
             <h3 class="services__subtitle">ЕГЭ 2021</h3>
             <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor
+              incididunt ut labore et dolore
+              magna
             </p>
-            <svg class="services__arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-              stroke="#fff" stroke-width="1.5" fill="none">
-              <path d="M15 18l6-6-6-6"></path>
-              <path d="M3 12h17"></path>
-              <path stroke-linecap="round" d="M21 12h-1"></path>
-            </svg>
+            <button class="services__btn btn-service-open">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
+                stroke="none">
+                <path
+                  d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
+              </svg>
+            </button>
           </a>
-        </article>
-        <article class="services__card">
+        </div>
+        <div class="services__card">
           <a class="services__link" href="#">
             <h3 class="services__subtitle">ЕГЭ 2021</h3>
             <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor
+              incididunt ut labore et dolore
+              magna
             </p>
-            <svg class="services__arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-              stroke="#fff" stroke-width="1.5" fill="none">
-              <path d="M15 18l6-6-6-6"></path>
-              <path d="M3 12h17"></path>
-              <path stroke-linecap="round" d="M21 12h-1"></path>
-            </svg>
+            <button class="services__btn btn-service-open">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
+                stroke="none">
+                <path
+                  d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
+              </svg>
+            </button>
           </a>
-        </article>
-        <article class="services__card">
+        </div>
+        <div class="services__card">
           <a class="services__link" href="#">
             <h3 class="services__subtitle">ЕГЭ 2021</h3>
             <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor
+              incididunt ut labore et dolore
+              magna
             </p>
-            <svg class="services__arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-              stroke="#fff" stroke-width="1.5" fill="none">
-              <path d="M15 18l6-6-6-6"></path>
-              <path d="M3 12h17"></path>
-              <path stroke-linecap="round" d="M21 12h-1"></path>
-            </svg>
+            <button class="services__btn btn-service-open">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
+                stroke="none">
+                <path
+                  d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
+              </svg>
+            </button>
           </a>
-        </article>
-        <article class="services__card">
+        </div>
+        <div class="services__card">
           <a class="services__link" href="#">
             <h3 class="services__subtitle">ЕГЭ 2021</h3>
             <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor
+              incididunt ut labore et dolore
+              magna
             </p>
-            <svg class="services__arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-              stroke="#fff" stroke-width="1.5" fill="none">
-              <path d="M15 18l6-6-6-6"></path>
-              <path d="M3 12h17"></path>
-              <path stroke-linecap="round" d="M21 12h-1"></path>
-            </svg>
+            <button class="services__btn btn-service-open">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
+                stroke="none">
+                <path
+                  d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
+              </svg>
+            </button>
           </a>
-        </article>
-        <article class="services__card">
+        </div>
+        <div class="services__card">
           <a class="services__link" href="#">
             <h3 class="services__subtitle">ЕГЭ 2021</h3>
             <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor
+              incididunt ut labore et dolore
+              magna
             </p>
-            <svg class="services__arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-              stroke="#fff" stroke-width="1.5" fill="none">
-              <path d="M15 18l6-6-6-6"></path>
-              <path d="M3 12h17"></path>
-              <path stroke-linecap="round" d="M21 12h-1"></path>
-            </svg>
+            <button class="services__btn btn-service-open">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
+                stroke="none">
+                <path
+                  d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
+              </svg>
+            </button>
           </a>
-        </article>
-        <article class="services__card">
+        </div>
+        <div class="services__card">
           <a class="services__link" href="#">
             <h3 class="services__subtitle">ЕГЭ 2021</h3>
             <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor
+              incididunt ut labore et dolore
+              magna
             </p>
-            <svg class="services__arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-              stroke="#fff" stroke-width="1.5" fill="none">
-              <path d="M15 18l6-6-6-6"></path>
-              <path d="M3 12h17"></path>
-              <path stroke-linecap="round" d="M21 12h-1"></path>
-            </svg>
+            <button class="services__btn btn-service-open">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
+                stroke="none">
+                <path
+                  d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
+              </svg>
+            </button>
           </a>
-        </article>
+        </div>
       </div>
     </section>
-    <section class="contacts section" id="contacts">
+    <section class="contacts" id="contacts">
       <h2 class="title">Контакты</h2>
       <div class="contacts-wrap">
         <form class="form" method="post" action="">
-          <div class="form__field">
-            <label class="form__label" for="name">Имя</label>
-            <input class="form__input" id="name" type="text" name="name" required="">
-            <span class="error-msg"></span>
-          </div>
-          <div class="form__field">
-            <label class="form__label" for="phone">Телефон</label>
-            <div class="form__field-phone">
-              <span class="form__code">+7</span>
-              <input class="form__input form__phone" id="phone" type="tel" name="phone" placeholder="(___) ___-__-__"
-                required="" minlength="10">
+          <div class="form__row">
+            <div class="form__field">
+              <label class="form__label" for="name">Имя</label>
+              <input class="form__input" id="name" type="text" name="name" required="">
+              <span class="error-msg"></span>
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="phone">Телефон</label>
+              <div class="form__field-phone">
+                <span class="form__code">+7</span>
+                <input class="form__input form__phone" id="phone" type="tel" name="phone" placeholder="(___) ___-__-__"
+                  required="" minlength="10">
+                <span class="error-msg"></span>
+              </div>
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="email">E-mail</label>
+              <input class="form__input" id="email" type="email" name="email" required="">
               <span class="error-msg"></span>
             </div>
           </div>
-          <div class="form__field">
-            <label class="form__label" for="email">E-mail</label>
-            <input class="form__input" id="email" type="email" name="email" required="">
-            <span class="error-msg"></span>
+          <div class="form__row">
+            <div class="form__field">
+              <label class="form__label" for="message">Сообщение</label>
+              <textarea class="form__textarea" id="message" name="message" resize="none">
+              </textarea>
+            </div>
           </div>
-          <div class="form__field">
-            <label for="checkbox">
-              <input class="checkbox" id="checkbox" type="checkbox" required="">
-              <span class="custom-checkbox"></span>
-              <span class="checkbox-text">Даю согласие на обработку <a class="form__link" href="#"
-                  target="_blank">персональных
-                  данных</a></span>
-            </label>
-            <span class="error-msg"></span>
+          <div class="form__row">
+            <div class="form__field">
+              <label for="checkbox">
+                <input class="checkbox" id="checkbox" type="checkbox" required="">
+                <span class="custom-checkbox"></span>
+                <span class="checkbox-text">Даю согласие на обработку <a class="form__link" href="#"
+                    target="_blank">персональных
+                    данных</a></span>
+              </label>
+              <span class="error-msg"></span>
+            </div>
           </div>
           <button class="btn" type="submit">Отправить</button>
         </form>
@@ -377,27 +455,11 @@
         </div>
       </div>
     </section>
-    <section class="info section" id="info">
+    <section class="info" id="info">
       <h2 class="title">Информация</h2>
       <div class="info-wrap">
         <table class="table">
           <tbody>
-            <tr class="table__row">
-              <td class="table__cell">Полное наименование организации</td>
-              <td class="table__cell">Прометей</td>
-            </tr>
-            <tr class="table__row">
-              <td class="table__cell">Полное наименование организации</td>
-              <td class="table__cell">Прометей</td>
-            </tr>
-            <tr class="table__row">
-              <td class="table__cell">Полное наименование организации</td>
-              <td class="table__cell">Прометей</td>
-            </tr>
-            <tr class="table__row">
-              <td class="table__cell">Полное наименование организации</td>
-              <td class="table__cell">Прометей</td>
-            </tr>
             <tr class="table__row">
               <td class="table__cell">Полное наименование организации</td>
               <td class="table__cell">Прометей</td>
@@ -454,16 +516,14 @@
         </a>
       </div>
       <div class="footer__social social">
-        <a class="social__link" href="https://vk.com/gruppamuzsouz" target="_blank" rel="noopener noreferrer"
-          aria-label="Вконтакте">
+        <a class="social__link" href="" target="_blank" rel="noopener noreferrer" aria-label="Вконтакте">
           <svg class="social__icon" width="36" height="36" viewBox="0 0 24 24" fill="#201f87" focusable="false"
             aria-hidden="true">
             <path
               d="M11.701 18.771h1.437s.433-.047.654-.284c.21-.221.21-.63.21-.63s-.031-1.927.869-2.21c.887-.281 2.012 1.86 3.211 2.683.916.629 1.605.494 1.605.494l3.211-.044s1.682-.105.887-1.426c-.061-.105-.451-.975-2.371-2.76-2.012-1.861-1.742-1.561.676-4.787 1.469-1.965 2.07-3.166 1.875-3.676-.166-.48-1.26-.361-1.26-.361l-3.602.031s-.27-.031-.465.09c-.195.119-.314.391-.314.391s-.572 1.529-1.336 2.82c-1.623 2.729-2.268 2.879-2.523 2.699-.604-.391-.449-1.58-.449-2.432 0-2.641.404-3.75-.781-4.035-.39-.091-.681-.15-1.685-.166-1.29-.014-2.378.01-2.995.311-.405.203-.72.652-.539.675.24.03.779.146 1.064.537.375.506.359 1.636.359 1.636s.211 3.116-.494 3.503c-.495.262-1.155-.28-2.595-2.756-.735-1.26-1.291-2.67-1.291-2.67s-.105-.256-.299-.406c-.227-.165-.557-.225-.557-.225l-3.435.03s-.51.016-.689.24c-.166.195-.016.615-.016.615s2.686 6.287 5.732 9.453c2.79 2.902 5.956 2.715 5.956 2.715l-.05-.055z">
             </path>
           </svg></a>
-        <a class="social__link" href="https://www.instagram.com/gruppasouz/" target="_blank" rel="noopener noreferrer"
-          aria-label="Инстаграм">
+        <a class="social__link" href="" target="_blank" rel="noopener noreferrer" aria-label="Инстаграм">
           <svg class="social__icon" width="36" height="36" viewBox="0 0 24 24" fill="#201f87" focusable="false"
             aria-hidden="true">
             <path
@@ -478,6 +538,26 @@
         <polyline points="6 14 12 8 18 14 18 14"></polyline>
       </svg></button>
   </div>
+  <!-- Service -->
+  <div class="service">
+    <div class="service__content">
+      <div class="service__header">
+        <h3 class="service__title">ЕГЭ 2021</h3>
+        <button class="service__btn--close btn--close" aria-label="Закрыть модальное окно">
+          <span class="cross"></span>
+        </button>
+      </div>
+      <div class="service__body">
+        <p class="service__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- Preloader -->
   <script async>
     const preloader = document.querySelector(".preloader"); window.onload = () => {
@@ -488,6 +568,7 @@
     }
   </script>
   <script src="js/imask.min.js"></script>
+  <script src="js/glide.min.js"></script>
   <script src="js/common.js"></script>
 </body>
 
