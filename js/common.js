@@ -12,49 +12,76 @@ const headerSmall = () => {
 
 // Toggle menu
 if (window.matchMedia("(max-width: 991px)").matches) {
+  const menuLeft = document.querySelector(".menu-left");
+
+  const toggleClassMenu = () => {
+    menuLeft.classList.add("menu-left--animate");
+
+    if (!menuLeft.classList.contains("menu-left--visible")) {
+      menuLeft.classList.add("menu-left--visible");
+    } else {
+      menuLeft.classList.remove('menu-left--visible');
+    }
+  }
+
   const toggleMenu = document.querySelector(".toggle-menu");
 
   toggleMenu.addEventListener("click", () => {
     toggleMenu.classList.toggle("toggle-menu--active");
+    toggleClassMenu();
+    toggleMenu.setAttribute('aria-expanded', true);
   });
 
   document.addEventListener("mouseup", (e) => {
-    if (e.target !== toggleMenu) {
+    if (e.target !== toggleMenu && e.target == menuLeft) {
       toggleMenu.classList.remove("toggle-menu--active");
+      toggleClassMenu();
+      toggleMenu.setAttribute('aria-expanded', false);
     }
   });
 }
 
-// Reviews
+// Carousel
 const glide = new Glide(".glide", {
   perView: 1,
   gap: 0,
   focusAt: "center",
-  autoplay: 3000
+  autoplay: 4000
 }).mount();
 
-// Link scroll
-document.querySelectorAll("a").forEach(link => {
-  link.classList.remove("nav__link--active");
+// Nav link
+const links = document.querySelectorAll('.nav__link');
+const sections = document.querySelectorAll('.section');
 
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-    console.log(link);
-    let sectionActive = document.querySelector(this.hash);
+function changeLinkState() {
+  let index = sections.length;
 
-    link.classList.add("nav__link--active");
+  while (--index && window.scrollY + 50 < sections[index].offsetTop) { }
 
-    sectionActive.scrollIntoView({
-      behavior: "smooth"
-    });
-  });
-});
+  links.forEach((link) => link.classList.remove('nav__link--active'));
+  links[index].classList.add('nav__link--active');
+}
 
-// Mask phone
-let phoneMask = IMask(document.querySelector(".form__phone"), {
-  mask: "(000) 000-00-00",
-  lazy: false
-});
+changeLinkState();
+window.addEventListener('scroll', changeLinkState);
+
+// Active link
+const activeLink = () => {
+  let windowScrollY = window.scrollY;
+
+  let navLinkAll = document.querySelectorAll(".nav__link");
+
+  let section = document.querySelector(".section");
+  let sectionId = section.id;
+
+  if (section.scrollHeight <= windowScrollY) {
+    for (let i = 0; i < navLinkAll.length; i++) {
+      if (navLinkAll[i].hash == `#${sectionId}`) {
+        navLinkAll[i].classList.add("nav__link--active");
+      }
+    }
+  }
+}
 
 // Btn top
 const btnTop = document.querySelector(".btn-top");
@@ -84,35 +111,13 @@ const btnTopShow = () => {
 window.onscroll = () => {
   headerSmall();
   btnTopShow();
-
+  activeLink();
 }
 
-// Left menu
-function toggleClassMenu() {
-  myMenu.classList.add("menu--animatable");
-
-  if (!myMenu.classList.contains("menu--visible")) {
-    myMenu.classList.add("menu--visible");
-  } else {
-    myMenu.classList.remove('menu--visible');
-  }
-}
-
-function OnTransitionEnd() {
-  myMenu.classList.remove("menu--animatable");
-}
-
-var myMenu = document.querySelector(".menu-left");
-var oppMenu = document.querySelector(".toggle-menu");
-myMenu.addEventListener("transitionend", OnTransitionEnd, false);
-oppMenu.addEventListener("click", toggleClassMenu, false);
-myMenu.addEventListener("click", toggleClassMenu, false);
 
 const form = document.querySelector("form");
 const name = document.querySelector('input[type="text"]');
 const email = document.querySelector('input[type="email"]');
-const password = document.querySelector(".password");
-const password2 = document.querySelector(".password2");
 
 function showError(input, msg) {
   const parent = input.parentElement;
@@ -183,33 +188,21 @@ form.addEventListener("submit", (e) => {
   checkPasswordsMatch(password, password2);
 });
 
-
-// glide.on('move', function (e) {
-//   let sliderItem = document.querySelector(".slider__item");
-
-//   let q = `${0.001 * e.movement}`;
-//   sliderItem.style.transform = "scale(" + q + ")";
-// });
-
-
-// glide.on('move.after', function () {
-//   let sliderItem = document.querySelector(".slider__item");
-//   console.log();
-//   sliderItem.style.transform = "scale(1)";
-// });
+// Service
 
 const service = document.querySelector(".service");
 const serviceBtnClose = document.querySelector(".service__btn--close");
 
-const btnServiceOpenAll = document.querySelectorAll(".services__link");
+const serviceOpenAll = document.querySelectorAll(".services__link");
 
-btnServiceOpenAll.forEach((btnServiceOpen) => {
-  btnServiceOpen.addEventListener("click", (e) => {
+serviceOpenAll.forEach((serviceOpen) => {
+  serviceOpen.addEventListener("click", (e) => {
     e.preventDefault();
-    btnServiceOpen.classList.add("btn--active");
+
+    serviceOpen.classList.add("btn--active");
 
     setTimeout(() => {
-      btnServiceOpen.classList.remove("btn--active");
+      serviceOpen.classList.remove("btn--active");
     }, 200);
 
     service.classList.add("service--open");
@@ -233,4 +226,38 @@ service.addEventListener("keydown", (e) => {
   if (e.keyCode === 27) {
     service.classList.remove("service--open");
   }
+});
+
+
+// document.addEventListener('DOMContentLoaded', function () {
+//   const ele = document.getElementById('input');
+//   const state = {
+//     value: ele.value,
+//   };
+
+//   ele.addEventListener('keydown', function (e) {
+//     const target = e.target;
+//     state.selectionStart = target.selectionStart;
+//     state.selectionEnd = target.selectionEnd;
+//   });
+
+//   ele.addEventListener('input', function (e) {
+//     const target = e.target;
+
+//     if (/^[0-9\s]*$/.test(target.value)) {
+//       state.value = target.value;
+//     } else {
+//       alert("Вводите цифры)");
+//       // Users enter the not supported characters
+//       // Restore the value and selection
+//       target.value = state.value;
+//       target.setSelectionRange(state.selectionStart, state.selectionEnd);
+//     }
+//   });
+// });
+
+// Mask phone
+let phoneMask = IMask(document.querySelector(".form__phone"), {
+  mask: "(000) 000-00-00",
+  lazy: false
 });

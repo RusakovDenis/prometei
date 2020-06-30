@@ -9,8 +9,6 @@
   <meta name="keywords" content="">
   <meta name="robots" content="index, follow">
   <title>Прометей | ЕГЭ 2021</title>
-  <link rel="stylesheet" href="css/glide.core.min.css">
-  <link rel="stylesheet" href="css/glide.theme.min.css">
   <meta name="theme-color" content="#FFFFFF">
   <link rel="shortcut icon" href="img/favicon.ico">
   <!-- Critical css -->
@@ -83,6 +81,8 @@
       animation: preloaderSpin 1.2s linear infinite
     }
   </style>
+  <link rel="stylesheet" href="css/glide.core.min.css">
+  <link rel="stylesheet" href="css/glide.theme.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -95,7 +95,7 @@
     <div class="header-wrap">
       <div class="logo">
         <img class="logo__icon" src="img/logo-icon.png" alt="Логотип">
-        <img class="logo__text" src="img/logo-text.png" alt="Логотип текст">
+        <img class="logo__text" src="img/logo-text.png" alt="Текст логотипа">
       </div>
       <nav class="nav">
         <ul class="nav__list">
@@ -107,91 +107,101 @@
         </ul>
       </nav>
       <div class="header__right">
-        <div class="lang">
-          <img class="lang__img" src="img/rus.gif" alt="Русский флаг">
+        <a class="lang" href="#">
+          <img class="lang__img" src="img/rus.jpg" alt="Флаг России">
+          <svg class="" xmlns="http://www.w3.org/2000/svg" width="25" height="25">
+            <use xlink:href="img/sprite-icon.svg#ru"></use>
+          </svg>
           <ul class="lang__list">
             <li class="lang__item">
               <a class="lang__link lang__link--active" href="#">
-                <img class="lang__img" src="img/rus.gif" alt="">
+                <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                  <use xlink:href="img/sprite-icon.svg#ru"></use>
+                </svg>
               </a>
             </li>
             <li class="lang__item">
               <a class="lang__link" href="#">
-                <img class="lang__img" src="img/eng.gif" alt="">
+                <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                  <use xlink:href="img/sprite-icon.svg#en"></use>
+                </svg>
               </a>
             </li>
           </ul>
-        </div>
-        <button class="toggle-menu" aria-label="Открыть меню">
+        </a>
+        <button class="toggle-menu" id="toggle-menu" aria-label="Открыть меню" aria-expanded="false" tabindex="0">
           <span class="toggle-menu__line"></span>
         </button>
-        <div class="menu-left">
+        <div class="menu-left" id="navMenu">
           <nav class="menu-left__nav">
             <ul class="menu-left__list">
-              <li class="menu-left__item"><a class="menu-left__link menu-left__link--active"
-                  href="index.html">Главная</a>
-              </li>
-              <li class="menu-left__item"><a class="menu-left__link" href="about-us.html">О компании</a></li>
-              <li class="menu-left__item"><a class="menu-left__link" href="teachers.html">Преподаватели</a></li>
-              <li class="menu-left__item"><a class="menu-left__link" href="prices.html">Цены</a></li>
-              <li class="menu-left__item"><a class="menu-left__link" href="contacts.html">Контакты</a></li>
+              <li class="menu-left__item"><a class="menu-left__link" href="#about-us">О компании</a></li>
+              <li class="menu-left__item"><a class="menu-left__link" href="#teachers">Преподаватели</a></li>
+              <li class="menu-left__item"><a class="menu-left__link" href="#services">Услуги</a></li>
+              <li class="menu-left__item"><a class="menu-left__link" href="#info">Информация</a></li>
+              <li class="menu-left__item"><a class="menu-left__link" href="#contacts">Контакты</a></li>
             </ul>
           </nav>
         </div>
       </div>
     </div>
   </header>
-  <section class="slider" id="slider">
+  <section class="carousel" id="carousel">
     <div class="glide">
       <div class="glide__track" data-glide-el="track">
         <div class="glide__slides">
-          <div class="slider__item glide__slide">
-            <div class="slider__content">
-              <div class="slider__card">
-                <h1 class="slider__title">Прометей</h1>
-                <p class="slider__description">Комплексная подготовка к
-                  ОГЭ и ЕГЭ в группе и индивидуально</p>
-                <button class="btn">Записаться</button>
+          <div class="carousel__item glide__slide">
+            <div class="carousel__content">
+              <div class="carousel__card">
+                <div class="carousel__card-wrap">
+                  <h1 class="carousel__title">Прометей</h1>
+                  <p class="carousel__description">Комплексная подготовка к
+                    ОГЭ и ЕГЭ в группе и индивидуально</p>
+                  <button class="btn">Записаться</button>
+                </div>
               </div>
             </div>
           </div>
-          <div class="slider__item glide__slide">
-            <div class="slider__content">
-              <div class="slider__card">
-                <h1 class="slider__title">Прометей</h1>
-                <p class="slider__description">Комплексная подготовка к
-                  ОГЭ и ЕГЭ в группе и индивидуально</p>
-                <button class="btn">Записаться</button>
+          <div class="carousel__item glide__slide">
+            <div class="carousel__content">
+              <div class="carousel__card">
+                <div class="carousel__card-wrap">
+                  <h1 class="carousel__title">Прометей</h1>
+                  <p class="carousel__description">Комплексная подготовка к
+                    ОГЭ и ЕГЭ в группе и индивидуально</p>
+                  <button class="btn">Записаться</button>
+                </div>
               </div>
             </div>
           </div>
-          <div class="slider__item glide__slide">
-            <div class="slider__content">
-              <div class="slider__card">
-                <h1 class="slider__title">Прометей</h1>
-                <p class="slider__description">Комплексная подготовка к
-                  ОГЭ и ЕГЭ в группе и индивидуально</p>
-                <button class="btn">Записаться</button>
+          <div class="carousel__item glide__slide">
+            <div class="carousel__content">
+              <div class="carousel__card">
+                <div class="carousel__card-wrap">
+                  <h1 class="carousel__title">Прометей</h1>
+                  <p class="carousel__description">Комплексная подготовка к
+                    ОГЭ и ЕГЭ в группе и индивидуально</p>
+                  <button class="btn">Записаться</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="glide__arrows" data-glide-el="controls">
-          <button class="glide__arrow slider__arrow--prev" data-glide-dir="<" aria-label="Следующий отзыв"></button>
-          <button class="glide__arrow slider__arrow--next" data-glide-dir=">" aria-label="Предыдущий отзыв"></button>
+          <button class="glide__arrow carousel__arrow--prev" data-glide-dir="<" aria-label="Следующий баннер"></button>
+          <button class="glide__arrow carousel__arrow--next" data-glide-dir=">" aria-label="Предыдущий баннер"></button>
         </div>
         <div class="glide__bullets" data-glide-el="controls[nav]">
           <button class="glide__bullet" data-glide-dir="=0"></button>
           <button class="glide__bullet" data-glide-dir="=1"></button>
           <button class="glide__bullet" data-glide-dir="=2"></button>
-          <button class="glide__bullet" data-glide-dir="=3"></button>
         </div>
       </div>
     </div>
     <a class="link-bottom" href="#about-us" aria-label="Перейти к блоку 'О компании'"></a>
   </section>
   <div class="wrap">
-    <section class="about-us" id="about-us">
+    <section class="about-us section" id="about-us">
       <img class="about-us__img" src="img/about-us.webp" alt="Мы">
       <div class="about-us__card">
         <h2 class="about-us__title">О компании</h2>
@@ -202,16 +212,9 @@
           esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
           qui
           officia deserunt mollit anim id est laborum.</p>
-        <a class="link" href="#">
-          <span class="link__text">Перейти</span>
-          <svg class="link__icon" width="13px" height="10px" viewBox="0 0 13 10">
-            <path d="M1,5 L11,5"></path>
-            <polyline points="8 1 12 5 8 9"></polyline>
-          </svg>
-        </a>
       </div>
     </section>
-    <section class="teachers" id="teachers">
+    <section class="teachers section" id="teachers">
       <h2 class="title">Преподаватели</h2>
       <div class="teachers-wrap">
         <div class="teachers__item">
@@ -277,9 +280,18 @@
             tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
         </div>
+        <div class="teachers__item">
+          <img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
+          <h3 class="teachers__name">Имя Фамилия</h3>
+          <p class="teachers__info">Математик</p>
+          <hr class="teachers__separator">
+          <p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
+        </div>
       </div>
     </section>
-    <section class="services" id="services">
+    <section class="services section" id="services">
       <h2 class="title">Услуги</h2>
       <div class="services-wrap">
         <div class="services__card">
@@ -290,13 +302,13 @@
               incididunt ut labore et dolore
               magna
             </p>
-            <button class="services__btn btn-service-open">
+            <div class="services__icon-wrap">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
                 stroke="none">
                 <path
                   d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
               </svg>
-            </button>
+            </div>
           </a>
         </div>
         <div class="services__card">
@@ -307,13 +319,13 @@
               incididunt ut labore et dolore
               magna
             </p>
-            <button class="services__btn btn-service-open">
+            <div class="services__icon-wrap">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
                 stroke="none">
                 <path
                   d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
               </svg>
-            </button>
+            </div>
           </a>
         </div>
         <div class="services__card">
@@ -324,13 +336,13 @@
               incididunt ut labore et dolore
               magna
             </p>
-            <button class="services__btn btn-service-open">
+            <div class="services__icon-wrap">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
                 stroke="none">
                 <path
                   d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
               </svg>
-            </button>
+            </div>
           </a>
         </div>
         <div class="services__card">
@@ -341,13 +353,13 @@
               incididunt ut labore et dolore
               magna
             </p>
-            <button class="services__btn btn-service-open">
+            <div class="services__icon-wrap">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
                 stroke="none">
                 <path
                   d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
               </svg>
-            </button>
+            </div>
           </a>
         </div>
         <div class="services__card">
@@ -358,13 +370,13 @@
               incididunt ut labore et dolore
               magna
             </p>
-            <button class="services__btn btn-service-open">
+            <div class="services__icon-wrap">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
                 stroke="none">
                 <path
                   d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
               </svg>
-            </button>
+            </div>
           </a>
         </div>
         <div class="services__card">
@@ -375,13 +387,13 @@
               incididunt ut labore et dolore
               magna
             </p>
-            <button class="services__btn btn-service-open">
+            <div class="services__icon-wrap">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
                 stroke="none">
                 <path
                   d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
               </svg>
-            </button>
+            </div>
           </a>
         </div>
         <div class="services__card">
@@ -392,70 +404,18 @@
               incididunt ut labore et dolore
               magna
             </p>
-            <button class="services__btn btn-service-open">
+            <div class="services__icon-wrap">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
                 stroke="none">
                 <path
                   d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
               </svg>
-            </button>
+            </div>
           </a>
         </div>
       </div>
     </section>
-    <section class="contacts" id="contacts">
-      <h2 class="title">Контакты</h2>
-      <div class="contacts-wrap">
-        <form class="form" method="post" action="">
-          <div class="form__row">
-            <div class="form__field">
-              <label class="form__label" for="name">Имя</label>
-              <input class="form__input" id="name" type="text" name="name" required="">
-              <span class="error-msg"></span>
-            </div>
-            <div class="form__field">
-              <label class="form__label" for="phone">Телефон</label>
-              <div class="form__field-phone">
-                <span class="form__code">+7</span>
-                <input class="form__input form__phone" id="phone" type="tel" name="phone" placeholder="(___) ___-__-__"
-                  required="" minlength="10">
-                <span class="error-msg"></span>
-              </div>
-            </div>
-            <div class="form__field">
-              <label class="form__label" for="email">E-mail</label>
-              <input class="form__input" id="email" type="email" name="email" required="">
-              <span class="error-msg"></span>
-            </div>
-          </div>
-          <div class="form__row">
-            <div class="form__field">
-              <label class="form__label" for="message">Сообщение</label>
-              <textarea class="form__textarea" id="message" name="message" resize="none">
-              </textarea>
-            </div>
-          </div>
-          <div class="form__row">
-            <div class="form__field">
-              <label for="checkbox">
-                <input class="checkbox" id="checkbox" type="checkbox" required="">
-                <span class="custom-checkbox"></span>
-                <span class="checkbox-text">Даю согласие на обработку <a class="form__link" href="#"
-                    target="_blank">персональных
-                    данных</a></span>
-              </label>
-              <span class="error-msg"></span>
-            </div>
-          </div>
-          <button class="btn" type="submit">Отправить</button>
-        </form>
-        <div class="contacts__content">
-          <h3 class="contacts__title">Остались вопросы?</h3>
-          <p class="contacts__description">Оставьте заявку, и мы свяжемся с вами для консультации</p>
-        </div>
-      </div>
-    </section>
-    <section class="info" id="info">
+    <section class="info section" id="info">
       <h2 class="title">Информация</h2>
       <div class="info-wrap">
         <table class="table">
@@ -490,6 +450,58 @@
             </tr>
           </tbody>
         </table>
+      </div>
+    </section>
+    <section class="contacts section" id="contacts">
+      <h2 class="title">Контакты</h2>
+      <div class="contacts-wrap">
+        <form class="form" method="post" action="">
+          <div class="form__row">
+            <div class="form__field">
+              <label class="form__label" for="name">Имя</label>
+              <input class="form__input" id="name" type="text" name="name" required="">
+              <span class="error-msg"></span>
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="phone">Телефон</label>
+              <div class="form__field-phone">
+                <span class="form__code">+7</span>
+                <input class="form__input form__phone" id="phone" type="tel" name="phone" placeholder="(___) ___-__-__"
+                  required="" minlength="10">
+                <span class="error-msg"></span>
+              </div>
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="email">E-mail</label>
+              <input class="form__input" id="email" type="email" name="email" required="">
+              <span class="error-msg"></span>
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__field">
+              <label class="form__label" for="message">Сообщение</label>
+              <textarea class="form__textarea" id="message" name="message">
+              </textarea>
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__field">
+              <label for="checkbox">
+                <input class="checkbox" id="checkbox" type="checkbox" required="">
+                <span class="custom-checkbox"></span>
+                <span class="checkbox-text">Даю согласие на обработку <a class="form__link" href="#"
+                    target="_blank">персональных
+                    данных</a></span>
+              </label>
+              <span class="error-msg"></span>
+            </div>
+          </div>
+          <button class="btn" type="submit">Отправить</button>
+        </form>
+        <div class="contacts__content">
+          <h3 class="contacts__title">Остались вопросы?</h3>
+          <p class="contacts__description">Оставьте заявку, и мы свяжемся с вами для консультации</p>
+        </div>
       </div>
     </section>
     <footer class="footer">
@@ -548,16 +560,18 @@
         </button>
       </div>
       <div class="service__body">
-        <p class="service__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        <p class="service__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+          tempor
           incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+          id
           est laborum.</p>
       </div>
     </div>
   </div>
-
   <!-- Preloader -->
   <script async>
     const preloader = document.querySelector(".preloader"); window.onload = () => {
@@ -567,8 +581,8 @@
       setTimeout(() => { preloader.style.display = "none"; }, 2000);
     }
   </script>
-  <script src="js/imask.min.js"></script>
   <script src="js/glide.min.js"></script>
+  <script src="js/imask.min.js"></script>
   <script src="js/common.js"></script>
 </body>
 
