@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="">
+  <meta name="description" content="Сайт с курсами для успешной сдачи ЕГЭ 2021">
   <meta name="keywords" content="">
   <meta name="robots" content="index, follow">
   <title>Прометей | ЕГЭ 2021</title>
@@ -76,20 +76,19 @@
       text-align: center;
       border: 4px solid rgba(0, 0, 0, .1);
       border-radius: 100%;
-      border-left-color: #201f87;
+      border-left-color: var(--colorBlue);
       -webkit-animation: preloaderSpin 1.2s linear infinite;
       animation: preloaderSpin 1.2s linear infinite
     }
   </style>
-  <link rel="stylesheet" href="css/glide.core.min.css">
-  <link rel="stylesheet" href="css/glide.theme.min.css">
+  <link rel="stylesheet" href="css/keen-slider.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   <div class="preloader preloader--show" style="display: none;">
     <div class="preloader__circle"></div>
-    <img class="preloader__img" src="img/logo-small.png" alt="Логотип">
+    <img class="preloader__img" src="img/logo-icon.png" alt="Логотип">
   </div>
   <header class="header">
     <div class="header-wrap">
@@ -107,28 +106,29 @@
         </ul>
       </nav>
       <div class="header__right">
-        <a class="lang" href="#">
-          <img class="lang__img" src="img/rus.jpg" alt="Флаг России">
-          <svg class="" xmlns="http://www.w3.org/2000/svg" width="25" height="25">
-            <use xlink:href="img/sprite-icon.svg#ru"></use>
-          </svg>
+        <div class="lang">
+          <a class="lang__link lang__link--current" href="#" aria-label="Выбран русский язык">
+            <svg class="" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+              <use xlink:href="img/sprite-icon.svg#ru"></use>
+            </svg>
+          </a>
           <ul class="lang__list">
             <li class="lang__item">
-              <a class="lang__link lang__link--active" href="#">
-                <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+              <a class="lang__link lang__link--active" href="#" aria-hidden="true">
+                <svg class="lang__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
                   <use xlink:href="img/sprite-icon.svg#ru"></use>
                 </svg>
               </a>
             </li>
             <li class="lang__item">
-              <a class="lang__link" href="#">
-                <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+              <a class="lang__link" href="#" aria-label="Выбрать английски язык">
+                <svg class="lang__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
                   <use xlink:href="img/sprite-icon.svg#en"></use>
                 </svg>
               </a>
             </li>
           </ul>
-        </a>
+        </div>
         <button class="toggle-menu" id="toggle-menu" aria-label="Открыть меню" aria-expanded="false" tabindex="0">
           <span class="toggle-menu__line"></span>
         </button>
@@ -146,59 +146,51 @@
       </div>
     </div>
   </header>
-  <section class="carousel" id="carousel">
-    <div class="glide">
-      <div class="glide__track" data-glide-el="track">
-        <div class="glide__slides">
-          <div class="carousel__item glide__slide">
-            <div class="carousel__content">
-              <div class="carousel__card">
-                <div class="carousel__card-wrap">
-                  <h1 class="carousel__title">Прометей</h1>
-                  <p class="carousel__description">Комплексная подготовка к
-                    ОГЭ и ЕГЭ в группе и индивидуально</p>
-                  <button class="btn">Записаться</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel__item glide__slide">
-            <div class="carousel__content">
-              <div class="carousel__card">
-                <div class="carousel__card-wrap">
-                  <h1 class="carousel__title">Прометей</h1>
-                  <p class="carousel__description">Комплексная подготовка к
-                    ОГЭ и ЕГЭ в группе и индивидуально</p>
-                  <button class="btn">Записаться</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel__item glide__slide">
-            <div class="carousel__content">
-              <div class="carousel__card">
-                <div class="carousel__card-wrap">
-                  <h1 class="carousel__title">Прометей</h1>
-                  <p class="carousel__description">Комплексная подготовка к
-                    ОГЭ и ЕГЭ в группе и индивидуально</p>
-                  <button class="btn">Записаться</button>
-                </div>
-              </div>
+  <section class="slider" id="slider">
+    <div id="my-keen-slider" class="keen-slider zoom-out">
+      <div class="keen-slider__slide zoom-out__slide">
+        <div class="slider__content">
+          <div class="slider__card">
+            <div class="slider__card-wrap">
+              <h1 class="slider__title">Прометей</h1>
+              <p class="slider__description">Комплексная подготовка к
+                ОГЭ и ЕГЭ в группе и индивидуально</p>
+              <button class="btn">Записаться</button>
             </div>
           </div>
         </div>
-        <div class="glide__arrows" data-glide-el="controls">
-          <button class="glide__arrow carousel__arrow--prev" data-glide-dir="<" aria-label="Следующий баннер"></button>
-          <button class="glide__arrow carousel__arrow--next" data-glide-dir=">" aria-label="Предыдущий баннер"></button>
+      </div>
+      <div class="keen-slider__slide zoom-out__slide">
+        <div class="slider__content">
+          <div class="slider__card">
+            <div class="slider__card-wrap">
+              <h1 class="slider__title">Прометей</h1>
+              <p class="slider__description">Комплексная подготовка к
+                ОГЭ и ЕГЭ в группе и индивидуально</p>
+              <button class="btn">Записаться</button>
+            </div>
+          </div>
         </div>
-        <div class="glide__bullets" data-glide-el="controls[nav]">
-          <button class="glide__bullet" data-glide-dir="=0"></button>
-          <button class="glide__bullet" data-glide-dir="=1"></button>
-          <button class="glide__bullet" data-glide-dir="=2"></button>
+      </div>
+      <div class="keen-slider__slide zoom-out__slide">
+        <div class="slider__content">
+          <div class="slider__card">
+            <div class="slider__card-wrap">
+              <h1 class="slider__title">Прометей</h1>
+              <p class="slider__description">Комплексная подготовка к
+                ОГЭ и ЕГЭ в группе и индивидуально</p>
+              <button class="btn">Записаться</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <a class="link-bottom" href="#about-us" aria-label="Перейти к блоку 'О компании'"></a>
+    <button class="slider__btn slider__btn--prev" aria-label="Предыдущий баннер">
+    </button>
+    <button class="slider__btn slider__btn--next" aria-label="Следующий баннер">
+    </button>
+    <div id="dots" class="dots"></div>
+    <a class="link-bottom" href="" aria-label="Перейти к блоку 'О компании'"></a>
   </section>
   <div class="wrap">
     <section class="about-us section" id="about-us">
@@ -452,9 +444,11 @@
         </table>
       </div>
     </section>
-    <section class="contacts section" id="contacts">
+  </div>
+  <section class="contacts section" id="contacts">
+    <div class="contacts-wrap">
       <h2 class="title">Контакты</h2>
-      <div class="contacts-wrap">
+      <div class="contacts-grid">
         <form class="form" method="post" action="">
           <div class="form__row">
             <div class="form__field">
@@ -490,8 +484,7 @@
                 <input class="checkbox" id="checkbox" type="checkbox" required="">
                 <span class="custom-checkbox"></span>
                 <span class="checkbox-text">Даю согласие на обработку <a class="form__link" href="#"
-                    target="_blank">персональных
-                    данных</a></span>
+                    target="_blank">персональных&nbsp;данных</a></span>
               </label>
               <span class="error-msg"></span>
             </div>
@@ -503,8 +496,10 @@
           <p class="contacts__description">Оставьте заявку, и мы свяжемся с вами для консультации</p>
         </div>
       </div>
-    </section>
-    <footer class="footer">
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-wrap">
       <div class="footer__copyright">
         <p class="footer__paragraph">Прометей</p>
         <p class="footer__paragraph">Copyright © 2020</p>
@@ -516,7 +511,7 @@
               d="M12.7407967,18.4035953 L15.8976569,15.246735 L21.114676,18.885324 L19.9443794,20.055614 C19.1648657,20.8351277 18.020623,21.1243165 16.9643502,20.8087683 C13.7351168,19.8440753 10.8342484,18.0754771 8.26174492,15.5029737 C5.6892452,12.930474 3.92064841,10.0296102 2.95595454,6.80038244 C2.64039085,5.74410652 2.92958124,4.59985601 3.70910009,3.82033716 L4.87939464,2.65004261 L8.51798358,7.86706169 L5.36112331,11.023922">
             </path>
           </svg>+7 (918) 552-66-32</a>
-        <a class="footer__email" href="mailto:hello@gruppasouz.ru">
+        <a class="footer__email" href="mailto:prometei@gmail.ru">
           <svg class="footer__icon-email" width="24" height="24" viewBox="0 0 24 24" stroke="#201f87" stroke-width="1.5"
             fill="none" focusable="false" aria-hidden="true">
             <rect width="20" height="14" x="2" y="5"></rect>
@@ -524,7 +519,7 @@
             <path d="M2 19l6.825-7.8"></path>
             <path d="M22 19l-6.844-7.822"></path>
           </svg>
-          hello@gruppasouz.ru
+          prometei@gmail.ru
         </a>
       </div>
       <div class="footer__social social">
@@ -543,13 +538,14 @@
             </path>
           </svg></a>
       </div>
-    </footer>
-    <button class="btn-top btn--hide" aria-label="Прокрутка в начало страницы"><svg class="icon-arrow-top" width="42"
-        height="42" viewBox="0 0 24 24" stroke="#201f87" stroke-width="1.5" fill="none" focusable="false"
-        aria-hidden="true">
-        <polyline points="6 14 12 8 18 14 18 14"></polyline>
-      </svg></button>
-  </div>
+    </div>
+  </footer>
+  <button class="btn-top btn--hide" aria-label="Прокрутка в начало страницы">
+    <svg class="icon-arrow-top" width="42" height="42" viewBox="0 0 24 24" stroke="#201f87" stroke-width="1.5"
+      fill="none" focusable="false" aria-hidden="true">
+      <polyline points="6 14 12 8 18 14 18 14"></polyline>
+    </svg>
+  </button>
   <!-- Service -->
   <div class="service">
     <div class="service__content">
@@ -576,12 +572,13 @@
   <script async>
     const preloader = document.querySelector(".preloader"); window.onload = () => {
       setTimeout(() => {
-        preloader.classList.remove("preloader--show"); document.body.style.removeProperty("overflow-y");
+        preloader.classList.remove("preloader--show");
+        document.body.style.removeProperty("overflow-y");
       }, 1500);
       setTimeout(() => { preloader.style.display = "none"; }, 2000);
     }
   </script>
-  <script src="js/glide.min.js"></script>
+  <script src="js/keen-slider.min.js"></script>
   <script src="js/imask.min.js"></script>
   <script src="js/common.js"></script>
 </body>
