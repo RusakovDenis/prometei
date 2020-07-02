@@ -1,44 +1,177 @@
 // Header bottom fixed
-const headerBottom = document.querySelector(".header__bottom");
-const logoWrap = document.querySelector(".logo-wrap").scrollHeight + 10;
+const header = document.querySelector(".header");
+const headerHeight = header.scrollHeight;
 
-const headerBottomFixed = () => {
-  if (window.pageYOffset >= logoWrap) {
-    headerBottom.classList.add("header__bottom--fixed");
+const headerSmall = () => {
+  if (window.pageYOffset >= headerHeight) {
+    header.classList.add("header--small");
   } else {
-    headerBottom.classList.remove("header__bottom--fixed");
+    header.classList.remove("header--small");
   }
 }
 
 // Toggle menu
 if (window.matchMedia("(max-width: 991px)").matches) {
   const toggleMenu = document.querySelector(".toggle-menu");
+  const menuLeft = document.querySelector(".menu-left");
 
   toggleMenu.addEventListener("click", () => {
     toggleMenu.classList.toggle("toggle-menu--active");
+    toggleMenu.setAttribute("aria-expanded", true);
+    toggleClassMenu();
   });
 
   document.addEventListener("mouseup", (e) => {
-    if (e.target !== toggleMenu) {
+    if (e.target !== toggleMenu && e.target == menuLeft) {
       toggleMenu.classList.remove("toggle-menu--active");
+      toggleMenu.setAttribute("aria-expanded", false);
+      toggleClassMenu();
+    }
+  });
+
+  // Menu left
+  const toggleClassMenu = () => {
+    menuLeft.classList.add("menu-left--apperance");
+
+    if (!menuLeft.classList.contains("menu-left--visible")) {
+      menuLeft.classList.add("menu-left--visible");
+      document.body.style.overflowY = "hidden";
+    } else {
+      menuLeft.classList.remove('menu-left--visible');
+      document.body.style.removeProperty("overflow-y");
+    }
+  }
+
+  // Link scroll
+  document.querySelectorAll(".menu-left__link").forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      toggleMenu.classList.toggle("toggle-menu--active");
+      toggleClassMenu();
+
+      document.querySelector(this.hash).scrollIntoView({
+        behavior: "smooth"
+      });
+    });
+  });
+}
+
+// Active link menu left
+let navLinksMenuLeft = document.querySelectorAll(".menu-left__link");
+
+const addActiveClassMenuLeft = () => {
+  let fromTop = window.scrollY + 80;
+
+  navLinksMenuLeft.forEach(link => {
+    let section = document.querySelector(link.hash);
+
+    if (
+      section.offsetTop <= fromTop &&
+      section.offsetTop + section.offsetHeight > fromTop
+    ) {
+      link.classList.add("menu-left__link--active");
+    } else {
+      link.classList.remove("menu-left__link--active");
     }
   });
 }
 
-// Link scroll
-document.querySelector(".link-bottom").addEventListener("click", function (e) {
-  e.preventDefault();
+// Slider
+let elements = document.querySelectorAll(".zoom-out__slide");
+let slider = new KeenSlider("#my-keen-slider", {
+  loop: true,
+  slides: elements.length,
+  duration: 1500,
+  initial: 0,
+  move: s => {
+    elements.forEach((element, idx) => {
+      moveElement(element, idx, s.details());
+    });
+  },
+  created: function (instance) {
+    document.querySelector(".slider__btn--prev").addEventListener("click", function () {
+      instance.prev();
+    });
 
-  document.querySelector(this.hash).scrollIntoView({
-    behavior: "smooth"
+    document.querySelector(".slider__btn--next").addEventListener("click", function () {
+      instance.next();
+    });
+
+    let dotsWrap = document.getElementById("dots");
+    let slides = document.querySelectorAll(".keen-slider__slide");
+
+    slides.forEach(function (t, idx) {
+      let dot = document.createElement("button");
+      dot.classList.add("dot");
+      dotsWrap.appendChild(dot);
+      dot.addEventListener("click", function () {
+        instance.moveToSlide(idx);
+      });
+    });
+    updateClasses(instance);
+  },
+  slideChanged(instance) {
+    updateClasses(instance);
+  }
+});
+
+// Slider animation zoom out
+function moveElement(element, idx, details) {
+  let position = details.positions[idx];
+  let x = details.widthOrHeight * position.distance;
+  let scale_size = 0.7;
+  let scale = 1 - (scale_size - scale_size * position.portion);
+  let style = `translate3d(${x}px, 0px, 0px) scale(${scale})`;
+
+  element.style.transform = style;
+  element.style["-webkit-transform"] = style;
+}
+
+// Slider update classes
+function updateClasses(instance) {
+  let slide = instance.details().relativeSlide;
+  let btnPrev = document.querySelector(".slider__btn--prev");
+  let btnNext = document.querySelector(".slider__btn--next");
+
+  slide === 0 ? btnPrev.classList.add("arrow--disabled") : btnPrev.classList.remove("arrow--disabled");
+  slide === instance.details().size - 1 ? btnNext.classList.add("arrow--disabled") : btnNext.classList.remove("arrow--disabled");
+
+  let dots = document.querySelectorAll(".dot");
+
+  dots.forEach(function (dot, idx) {
+    idx === slide ? dot.classList.add("dot--active") : dot.classList.remove("dot--active");
+  });
+}
+
+// Nav link
+document.querySelectorAll(".nav__link").forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    document.querySelector(this.hash).scrollIntoView({
+      behavior: "smooth"
+    });
   });
 });
 
-// Mask phone
-let phoneMask = IMask(document.querySelector(".form__phone"), {
-  mask: "(000) 000-00-00",
-  lazy: false
-});
+// Active link
+let navLinks = document.querySelectorAll(".nav__link");
+let sections = document.querySelectorAll(".section");
+
+const addActiveClass = () => {
+  let fromTop = window.scrollY + 80;
+
+  navLinks.forEach(link => {
+    let section = document.querySelector(link.hash);
+
+    if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+      link.classList.add("nav__link--active");
+    } else {
+      link.classList.remove("nav__link--active");
+    }
+  });
+}
 
 // Btn top
 const btnTop = document.querySelector(".btn-top");
@@ -66,36 +199,90 @@ const btnTopShow = () => {
 
 // Scroll
 window.onscroll = () => {
-  headerBottomFixed();
+  headerSmall();
   btnTopShow();
-}
+  addActiveClass();
 
-// Left menu
-function toggleClassMenu() {
-  myMenu.classList.add("menu--animatable");
-
-  if (!myMenu.classList.contains("menu--visible")) {
-    myMenu.classList.add("menu--visible");
-  } else {
-    myMenu.classList.remove('menu--visible');
+  if (window.matchMedia("(max-width: 991px)").matches) {
+    addActiveClassMenuLeft();
   }
 }
 
-function OnTransitionEnd() {
-  myMenu.classList.remove("menu--animatable");
-}
+// Service
+const service = document.querySelector(".service");
+const serviceBtnClose = document.querySelector(".service__btn--close");
+const serviceOpenAll = document.querySelectorAll(".services__link");
 
-var myMenu = document.querySelector(".menu-left");
-var oppMenu = document.querySelector(".toggle-menu");
-myMenu.addEventListener("transitionend", OnTransitionEnd, false);
-oppMenu.addEventListener("click", toggleClassMenu, false);
-myMenu.addEventListener("click", toggleClassMenu, false);
+serviceOpenAll.forEach((serviceOpen) => {
+  serviceOpen.addEventListener("click", (e) => {
+    e.preventDefault();
 
+    serviceOpen.classList.add("btn--active");
+
+    setTimeout(() => {
+      serviceOpen.classList.remove("btn--active");
+    }, 200);
+
+    service.classList.add("service--open");
+    document.body.classList.add("scroll--hidden");
+  });
+});
+
+serviceBtnClose.addEventListener("click", () => {
+  service.classList.remove("service--open");
+  document.body.classList.remove("scroll--hidden");
+});
+
+service.addEventListener("mouseup", (e) => {
+  if (e.target == service) {
+    service.classList.remove("service--open");
+    document.body.classList.remove("scroll--hidden");
+  }
+});
+
+service.addEventListener("keydown", (e) => {
+  if (e.keyCode === 27) {
+    service.classList.remove("service--open");
+  }
+});
+
+// Mask phone
+let phoneMask = IMask(document.querySelector(".form__phone"), {
+  mask: "(000) 000-00-00",
+  lazy: false
+});
+
+// Message only numbers
+document.addEventListener("DOMContentLoaded", function () {
+  const ele = document.getElementById("phone");
+  const state = {
+    value: ele.value,
+  };
+
+  ele.addEventListener("keydown", function (e) {
+    const target = e.target;
+
+    state.selectionStart = target.selectionStart;
+    state.selectionEnd = target.selectionEnd;
+  });
+
+  ele.addEventListener("input", function (e) {
+    const target = e.target;
+
+    if (/^[0-9\s]*$/.test(target.value)) {
+      state.value = target.value;
+    } else {
+      alert("Вводите цифры :)");
+      target.value = state.value;
+      target.setSelectionRange(state.selectionStart, state.selectionEnd);
+    }
+  });
+});
+
+// Form
 const form = document.querySelector("form");
 const name = document.querySelector('input[type="text"]');
 const email = document.querySelector('input[type="email"]');
-const password = document.querySelector(".password");
-const password2 = document.querySelector(".password2");
 
 function showError(input, msg) {
   const parent = input.parentElement;
@@ -166,3 +353,8 @@ form.addEventListener("submit", (e) => {
   checkPasswordsMatch(password, password2);
 });
 
+
+
+
+
+// document.addEventListener('touchstart', onTouchStart, { passive: true }); 
