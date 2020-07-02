@@ -643,7 +643,7 @@ body {
 
 @media (max-width: 1140px) {
   .slider__card {
-    bottom: 110px;
+    bottom: 150px;
     left: 50%;
     width: 100%;
     max-width: 400px;
@@ -651,6 +651,12 @@ body {
     text-align: center;
     -webkit-transform: translate(-50%);
     transform: translate(-50%);
+  }
+}
+
+@media (max-width: 991px) {
+  .slider__card {
+    max-width: 300px;
   }
 }
 
