@@ -370,3 +370,23 @@ form.addEventListener("submit", (e) => {
 
 // let vh = window.innerHeight * 0.01;
 // document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+const observer = new IntersectionObserver(handler, {
+  rootMargin: "0px",
+  threshold: 0.1,
+});
+
+const images = document.querySelectorAll("img[data-src]");
+
+images.forEach(img => {
+  observer.observe(img);
+});
+
+function handler(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      loadImage(entry.target);
+      observer.unobserve(entry.target);
+    }
+  });
+}

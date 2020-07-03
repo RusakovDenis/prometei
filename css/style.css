@@ -578,6 +578,7 @@ body {
 
 .slider__card {
   position: absolute;
+  bottom: 40px;
   width: 100%;
   max-width: 500px;
   color: var(--colorDark, #222222);
@@ -1416,6 +1417,7 @@ body {
   height: 100px;
   margin-right: 15px;
   border-radius: var(--borderRadius);
+  border: 2px solid #f2f2f2;
 }
 
 @media (max-width: 568px) {
