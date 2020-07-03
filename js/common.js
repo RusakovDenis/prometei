@@ -14,7 +14,7 @@ const headerSmall = () => {
 document.querySelectorAll("a[href^='#']").forEach(anchor => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
-
+    alert(this.hash);
     document.querySelector(this.hash).scrollIntoView({
       behavior: "smooth"
     });
@@ -366,3 +366,7 @@ form.addEventListener("submit", (e) => {
 
 
 // document.addEventListener('touchstart', onTouchStart, { passive: true }); 
+
+
+// let vh = window.innerHeight * 0.01;
+// document.documentElement.style.setProperty("--vh", `${vh}px`);
