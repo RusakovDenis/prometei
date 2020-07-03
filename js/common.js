@@ -62,31 +62,6 @@ if (window.matchMedia("(max-width: 991px)").matches) {
       toggleVisibleMenu();
     });
   });
-
-  // Active link menu
-  let navLinksMenuLeft = document.querySelectorAll(".menu-left__link");
-
-  const addActiveClassMenuLeft = () => {
-    let fromTop = window.scrollY + 80;
-
-    navLinksMenuLeft.forEach(link => {
-      let section = document.querySelector(link.hash);
-
-      if (
-        section.offsetTop <= fromTop &&
-        section.offsetTop + section.offsetHeight > fromTop
-      ) {
-        link.classList.add("menu-left__link--active");
-      } else {
-        link.classList.remove("menu-left__link--active");
-      }
-    });
-  }
-
-  // Window scroll
-  window.scroll = () => {
-    addActiveClassMenuLeft();
-  }
 }
 
 let navLinks = document.querySelectorAll(".nav__link");
@@ -133,6 +108,7 @@ let slider = new KeenSlider("#my-keen-slider", {
       let dot = document.createElement("button");
       dot.classList.add("dot");
       dotsWrap.appendChild(dot);
+
       dot.addEventListener("click", function () {
         instance.moveToSlide(idx);
       });
@@ -186,6 +162,8 @@ const scrollStep = () => {
 
 btnTop.addEventListener("click", () => {
   interval = setInterval(scrollStep, 15);
+
+  scrollStep();
 });
 
 const btnTopShow = () => {
@@ -201,6 +179,29 @@ window.onscroll = () => {
   headerSmall();
   btnTopShow();
   addActiveClass();
+  if (window.matchMedia("(max-width: 991px)").matches) {
+    // Active link menu
+    let navLinksMenuLeft = document.querySelectorAll(".menu-left__link");
+
+    const addActiveClassMenuLeft = () => {
+      let fromTop = window.scrollY + 80;
+
+      navLinksMenuLeft.forEach(link => {
+        let section = document.querySelector(link.hash);
+
+        if (
+          section.offsetTop <= fromTop &&
+          section.offsetTop + section.offsetHeight > fromTop
+        ) {
+          link.classList.add("menu-left__link--active");
+        } else {
+          link.classList.remove("menu-left__link--active");
+        }
+      });
+    }
+
+    addActiveClassMenuLeft();
+  }
 }
 
 // Service
@@ -246,8 +247,7 @@ service.addEventListener("keydown", (e) => {
 
 // Scroll on contacts
 serviceLinks.forEach((serviceLink) => {
-  serviceLink.addEventListener("click", (e) => {
-    e.preventDefault();
+  serviceLink.addEventListener("click", () => {
 
     service.classList.remove("service--open");
   });
