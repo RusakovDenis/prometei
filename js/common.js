@@ -261,35 +261,32 @@ let phoneMask = IMask(document.querySelector(".form__phone"), {
 });
 
 // Message only numbers
-document.addEventListener("DOMContentLoaded", function () {
-  const ele = document.getElementById("phone");
-  const state = {
-    value: ele.value,
-  };
+// document.addEventListener("DOMContentLoaded", function () {
+//   const ele = document.getElementById("phone");
+//   const state = {
+//     value: ele.value,
+//   };
 
-  ele.addEventListener("keydown", function (e) {
-    const target = e.target;
+//   ele.addEventListener("keydown", function (e) {
+//     const target = e.target;
 
-    state.selectionStart = target.selectionStart;
-    state.selectionEnd = target.selectionEnd;
-  });
+//     state.selectionStart = target.selectionStart;
+//     state.selectionEnd = target.selectionEnd;
+//   });
 
-  ele.addEventListener("input", function (e) {
-    const target = e.target;
-
-    if (/^[0-9\s]*$/.test(target.value)) {
-      state.value = target.value;
-    } else {
-      alert("Вводите цифры :)");
-      target.value = state.value;
-      target.setSelectionRange(state.selectionStart, state.selectionEnd);
-    }
-  });
-});
+//   ele.addEventListener("input", function (e) {
+//     const target = e.target;
+//     if (/^[0-9\s]*$/.test(target.value)) {
+//       // state.value = target.value;
+//     } else {
+//       // target.value = state.value;
+//       // target.setSelectionRange(state.selectionStart, state.selectionEnd);
+//     }
+//   });
+// });
 
 // Form
 const form = document.querySelector("form");
-const name = document.querySelector('input[type="text"]');
 const email = document.querySelector('input[type="email"]');
 
 function showError(input, msg) {
@@ -316,7 +313,7 @@ function checkEmail(input) {
 
   regex.test(input.value.trim())
     ? showSuccess(input)
-    : showError(input, `Email isn't valid`);
+    : showError(input, `Email заполнен неверно`);
 }
 
 function checkRequired(inputArr) {
@@ -343,22 +340,11 @@ function checkLength(input, min, max) {
   }
 }
 
-function checkPasswordsMatch(input, input2) {
-  if (input.value !== input2.value) showError(input2, `Passwords don't match`);
-}
-
-function getFieldName(input) {
-  return input.previousElementSibling.textContent;
-}
-
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  checkRequired([email, password2]);
-  checkLength(name, 3, 15);
-  checkLength(password, 6, 25);
+  checkRequired([email]);
   checkEmail(email);
-  checkPasswordsMatch(password, password2);
 });
 
 
