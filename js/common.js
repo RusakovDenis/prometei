@@ -4,11 +4,22 @@ const headerHeight = header.scrollHeight;
 
 const headerSmall = () => {
   if (window.pageYOffset >= headerHeight) {
-    header.classList.add("header--small");
+    header.classList.add("header--fixed");
   } else {
-    header.classList.remove("header--small");
+    header.classList.remove("header--fixed");
   }
 }
+
+// Smooth scroll
+document.querySelectorAll("a[href^='#']").forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    document.querySelector(this.hash).scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+});
 
 // Toggle menu
 if (window.matchMedia("(max-width: 991px)").matches) {
@@ -18,19 +29,19 @@ if (window.matchMedia("(max-width: 991px)").matches) {
   toggleMenu.addEventListener("click", () => {
     toggleMenu.classList.toggle("toggle-menu--active");
     toggleMenu.setAttribute("aria-expanded", true);
-    toggleClassMenu();
+    toggleVisibleMenu();
   });
 
   document.addEventListener("mouseup", (e) => {
     if (e.target !== toggleMenu && e.target == menuLeft) {
       toggleMenu.classList.remove("toggle-menu--active");
       toggleMenu.setAttribute("aria-expanded", false);
-      toggleClassMenu();
+      toggleVisibleMenu();
     }
   });
 
   // Menu left
-  const toggleClassMenu = () => {
+  const toggleVisibleMenu = () => {
     menuLeft.classList.add("menu-left--apperance");
 
     if (!menuLeft.classList.contains("menu-left--visible")) {
@@ -42,45 +53,54 @@ if (window.matchMedia("(max-width: 991px)").matches) {
     }
   }
 
-  // Link scroll
+  // Click's meni left link
   document.querySelectorAll(".menu-left__link").forEach(anchor => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
 
       toggleMenu.classList.toggle("toggle-menu--active");
-      toggleClassMenu();
-
-      document.querySelector(this.hash).scrollIntoView({
-        behavior: "smooth"
-      });
+      toggleVisibleMenu();
     });
   });
+
+  // Active link menu
+  let navLinksMenuLeft = document.querySelectorAll(".menu-left__link");
+
+  const addActiveClassMenuLeft = () => {
+    let fromTop = window.scrollY + 80;
+
+    navLinksMenuLeft.forEach(link => {
+      let section = document.querySelector(link.hash);
+
+      if (
+        section.offsetTop <= fromTop &&
+        section.offsetTop + section.offsetHeight > fromTop
+      ) {
+        link.classList.add("menu-left__link--active");
+      } else {
+        link.classList.remove("menu-left__link--active");
+      }
+    });
+  }
+
+  // Window scroll
+  window.scroll = () => {
+    addActiveClassMenuLeft();
+  }
 }
 
-document.querySelector(".link-bottom").addEventListener("click", (e) => {
-  e.preventDefault();
+let navLinks = document.querySelectorAll(".nav__link");
 
-  document.querySelector(".about-us").scrollIntoView({
-    behavior: "smooth"
-  });
-});
-
-// Active link menu left
-let navLinksMenuLeft = document.querySelectorAll(".menu-left__link");
-
-const addActiveClassMenuLeft = () => {
+const addActiveClass = () => {
   let fromTop = window.scrollY + 80;
 
-  navLinksMenuLeft.forEach(link => {
-    let section = document.querySelector(link.hash);
+  navLinks.forEach(navLink => {
+    let section = document.querySelector(navLink.hash);
 
-    if (
-      section.offsetTop <= fromTop &&
-      section.offsetTop + section.offsetHeight > fromTop
-    ) {
-      link.classList.add("menu-left__link--active");
+    if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+      navLink.classList.add("nav__link--active");
     } else {
-      link.classList.remove("menu-left__link--active");
+      navLink.classList.remove("nav__link--active");
     }
   });
 }
@@ -152,35 +172,6 @@ function updateClasses(instance) {
   });
 }
 
-// Nav link
-document.querySelectorAll(".nav__link").forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    document.querySelector(this.hash).scrollIntoView({
-      behavior: "smooth"
-    });
-  });
-});
-
-// Active link
-let navLinks = document.querySelectorAll(".nav__link");
-let sections = document.querySelectorAll(".section");
-
-const addActiveClass = () => {
-  let fromTop = window.scrollY + 80;
-
-  navLinks.forEach(link => {
-    let section = document.querySelector(link.hash);
-
-    if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
-      link.classList.add("nav__link--active");
-    } else {
-      link.classList.remove("nav__link--active");
-    }
-  });
-}
-
 // Btn top
 const btnTop = document.querySelector(".btn-top");
 let interval = 0;
@@ -210,25 +201,22 @@ window.onscroll = () => {
   headerSmall();
   btnTopShow();
   addActiveClass();
-
-  if (window.matchMedia("(max-width: 991px)").matches) {
-    addActiveClassMenuLeft();
-  }
 }
 
 // Service
 const service = document.querySelector(".service");
+const servicesLinks = document.querySelectorAll(".services__link");
 const serviceBtnClose = document.querySelector(".service__btn--close");
-const serviceOpenAll = document.querySelectorAll(".services__link");
+const serviceLinks = document.querySelectorAll(".service__link");
 
-serviceOpenAll.forEach((serviceOpen) => {
-  serviceOpen.addEventListener("click", (e) => {
+servicesLinks.forEach((servicesLink) => {
+  servicesLink.addEventListener("click", (e) => {
     e.preventDefault();
 
-    serviceOpen.classList.add("btn--active");
+    servicesLink.classList.add("btn--active");
 
     setTimeout(() => {
-      serviceOpen.classList.remove("btn--active");
+      servicesLink.classList.remove("btn--active");
     }, 200);
 
     service.classList.add("service--open");
@@ -236,6 +224,7 @@ serviceOpenAll.forEach((serviceOpen) => {
   });
 });
 
+// Service btn close
 serviceBtnClose.addEventListener("click", () => {
   service.classList.remove("service--open");
   document.body.classList.remove("scroll--hidden");
@@ -248,10 +237,20 @@ service.addEventListener("mouseup", (e) => {
   }
 });
 
+// Service close click "Esc"
 service.addEventListener("keydown", (e) => {
   if (e.keyCode === 27) {
     service.classList.remove("service--open");
   }
+});
+
+// Scroll on contacts
+serviceLinks.forEach((serviceLink) => {
+  serviceLink.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    service.classList.remove("service--open");
+  });
 });
 
 // Mask phone
@@ -259,6 +258,21 @@ let phoneMask = IMask(document.querySelector(".form__phone"), {
   mask: "(000) 000-00-00",
   lazy: false
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////
 
 // Message only numbers
 // document.addEventListener("DOMContentLoaded", function () {

@@ -9,9 +9,9 @@
 		<path d="M30,0 v30 WM0,15 h60" stroke="#fff" stroke-width="10"/>
 		<path d="M30,0 v30 M0,15 h60" stroke="#cf142b" stroke-width="6"/>
 	</symbol>
-	<symbol id="ru" viewBox="0 0 32 32">
-		<rect fill="#fff" y="7" width="32" height="6"/>
-		<rect fill="#0039a6" y="13" width="32" height="6"/>
-		<rect fill="#d52b1e" y="19" width="32" height="6"/>
+	<symbol id="ru" viewBox="0 0 32 18">
+		<rect fill="#fff" y="0" width="32" height="6"/>
+		<rect fill="#0039a6" y="6" width="32" height="6"/>
+		<rect fill="#d52b1e" y="12" width="32" height="6"/>
 	</symbol>
 </svg>
