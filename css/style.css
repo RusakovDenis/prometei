@@ -907,14 +907,26 @@ body {
   cursor: pointer;
 }
 
+.link-bottom::after {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  width: 10px;
+  height: 20px;
+  border: 1.5px solid #ffffff;
+  border-radius: 5px;
+  transform: translate(-6px);
+  content: "";
+}
+
 .link-bottom::before {
   position: absolute;
   left: 50%;
-  top: 8px;
-  width: 8px;
-  height: 8px;
+  top: 10px;
+  width: 6px;
+  height: 6px;
   background-color: #ffffff;
-  margin-left: -4px;
+  margin-left: -2.5px;
   border-radius: 4px;
   -webkit-animation-duration: 1.5s;
   animation-duration: 1.5s;
@@ -932,8 +944,7 @@ body {
 
   to {
     opacity: 0;
-    transform: translateY(46px);
-    -webkit-transform: translateY(46px);
+    transform: translateY(20px);
   }
 }
 
@@ -944,8 +955,7 @@ body {
 
   to {
     opacity: 0;
-    transform: translateY(46px);
-    -webkit-transform: translateY(46px);
+    transform: translateY(20px);
   }
 }
 

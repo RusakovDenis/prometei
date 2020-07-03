@@ -57,6 +57,14 @@ if (window.matchMedia("(max-width: 991px)").matches) {
   });
 }
 
+document.querySelector(".link-bottom").addEventListener("click", (e) => {
+  e.preventDefault();
+
+  document.querySelector(".about-us").scrollIntoView({
+    behavior: "smooth"
+  });
+});
+
 // Active link menu left
 let navLinksMenuLeft = document.querySelectorAll(".menu-left__link");
 
