@@ -907,7 +907,7 @@ body {
   }
 
   .teachers-wrap::-webkit-scrollbar {
-    width: 8px;
+    height: 8px;
   }
 
   .teachers-wrap::-webkit-scrollbar-track {
@@ -1523,6 +1523,7 @@ body {
 
 .form__label {
   display: inline-block;
+  margin-bottom: 10px;
   font-size: 1.4em;
   cursor: pointer;
 }
