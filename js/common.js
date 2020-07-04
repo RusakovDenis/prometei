@@ -10,10 +10,12 @@ const headerSmall = () => {
   }
 }
 
-// Smooth scroll
-document.querySelectorAll("a[href^='#']").forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
+// Smooth scroll section
+document.querySelectorAll("a[href^='#']").forEach(link => {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
+
+    document.body.style.removeProperty("overflow-y");
 
     document.querySelector(this.hash).scrollIntoView({
       behavior: "smooth"
@@ -32,7 +34,7 @@ if (window.matchMedia("(max-width: 991px)").matches) {
     toggleVisibleMenu();
   });
 
-  document.addEventListener("mouseup", (e) => {
+  document.addEventListener("mouseup", function (e) {
     if (e.target !== toggleMenu && e.target == menuLeft) {
       toggleMenu.classList.remove("toggle-menu--active");
       toggleMenu.setAttribute("aria-expanded", false);
@@ -54,8 +56,8 @@ if (window.matchMedia("(max-width: 991px)").matches) {
   }
 
   // Click's meni left link
-  document.querySelectorAll(".menu-left__link").forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
+  document.querySelectorAll(".menu-left__link").forEach(menuLiftLink => {
+    menuLiftLink.addEventListener("click", function (e) {
       e.preventDefault();
 
       toggleMenu.classList.toggle("toggle-menu--active");
@@ -81,8 +83,8 @@ const addActiveClass = () => {
 }
 
 // Slider
-let keenSliderSlideAll = document.querySelectorAll(".keen-slider__slide");
-let slider = new KeenSlider("#my-keen-slider", {
+const keenSliderSlideAll = document.querySelectorAll(".keen-slider__slide");
+const slider = new KeenSlider("#my-keen-slider", {
   loop: true,
   slides: keenSliderSlideAll.length,
   duration: 1500,
@@ -93,24 +95,24 @@ let slider = new KeenSlider("#my-keen-slider", {
     });
   },
   created: function (instance) {
-    let sliderBtnPrev = document.querySelector(".slider__btn--prev");
+    const sliderBtnPrev = document.querySelector(".slider__btn--prev");
 
     sliderBtnPrev.addEventListener("click", () => {
       instance.prev();
     });
     sliderBtnPrev.setAttribute("aria-label", "Предыдущий слайд");
 
-    let sliderBtnNext = document.querySelector(".slider__btn--next");
+    const sliderBtnNext = document.querySelector(".slider__btn--next");
 
     sliderBtnNext.addEventListener("click", () => {
       instance.next();
     });
     sliderBtnPrev.setAttribute("aria-label", "Предыдущий слайд");
 
-    let dots = document.getElementById("dots");
+    const dots = document.getElementById("dots");
 
     keenSliderSlideAll.forEach(function (t, idx) {
-      let dot = document.createElement("button");
+      const dot = document.createElement("button");
 
       dot.classList.add("dot");
       dots.appendChild(dot);
@@ -144,7 +146,6 @@ function moveElement(element, idx, details) {
 // Slider update classes
 function updateClasses(instance) {
   let slide = instance.details().relativeSlide;
-
   let dotAll = document.querySelectorAll(".dot");
 
   dotAll.forEach(function (dot, idx) {
@@ -185,21 +186,18 @@ window.onscroll = () => {
   addActiveClass();
   if (window.matchMedia("(max-width: 991px)").matches) {
     // Active link menu
-    let navLinksMenuLeft = document.querySelectorAll(".menu-left__link");
+    const menuLeftLinkAll = document.querySelectorAll(".menu-left__link");
 
     const addActiveClassMenuLeft = () => {
       let fromTop = window.scrollY + 80;
 
-      navLinksMenuLeft.forEach(link => {
-        let section = document.querySelector(link.hash);
+      menuLeftLinkAll.forEach(menuLeftLink => {
+        let section = document.querySelector(menuLeftLink.hash);
 
-        if (
-          section.offsetTop <= fromTop &&
-          section.offsetTop + section.offsetHeight > fromTop
-        ) {
-          link.classList.add("menu-left__link--active");
+        if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+          menuLeftLink.classList.add("menu-left__link--active");
         } else {
-          link.classList.remove("menu-left__link--active");
+          menuLeftLink.classList.remove("menu-left__link--active");
         }
       });
     }
@@ -209,14 +207,22 @@ window.onscroll = () => {
 }
 
 // Service
-const service = document.querySelector(".service");
 const servicesLinks = document.querySelectorAll(".services__link");
+
+const service = document.querySelector(".service");
 const serviceBtnClose = document.querySelector(".service__btn--close");
-const serviceLinks = document.querySelectorAll(".service__link");
+const serviceTitle = document.querySelector(".service__title");
+const serviceDescrtiption = document.querySelector(".service__description");
 
 servicesLinks.forEach((servicesLink) => {
   servicesLink.addEventListener("click", (e) => {
     e.preventDefault();
+
+    let servicesTitleText = servicesLink.children[0].textContent;
+    serviceTitle.textContent = servicesTitleText;
+
+    let servicesDescriptionText = servicesLink.children[1].textContent;
+    serviceDescrtiption.textContent = servicesDescriptionText;
 
     servicesLink.classList.add("btn--active");
 
@@ -225,20 +231,20 @@ servicesLinks.forEach((servicesLink) => {
     }, 200);
 
     service.classList.add("service--open");
-    document.body.classList.add("scroll--hidden");
+    document.body.style.overflowY = "hidden";
   });
 });
 
 // Service btn close
 serviceBtnClose.addEventListener("click", () => {
   service.classList.remove("service--open");
-  document.body.classList.remove("scroll--hidden");
+  document.body.style.removeProperty("overflow-y");
 });
 
 service.addEventListener("mouseup", (e) => {
   if (e.target == service) {
     service.classList.remove("service--open");
-    document.body.classList.remove("scroll--hidden");
+    document.body.style.removeProperty("overflow-y");
   }
 });
 
@@ -249,12 +255,17 @@ service.addEventListener("keydown", (e) => {
   }
 });
 
-// Scroll on contacts
-serviceLinks.forEach((serviceLink) => {
-  serviceLink.addEventListener("click", () => {
+const formTextarea = document.querySelector(".form__textarea");
+const serviceLink = document.querySelector(".service__link");
 
-    service.classList.remove("service--open");
-  });
+// Scroll on contacts
+serviceLink.addEventListener("click", () => {
+  let serviceTitleText = serviceTitle.textContent;
+
+  formTextarea.value = `Хочу записаться на курс "${serviceTitleText}"`;
+
+  service.classList.remove("service--open");
+  document.body.style.removeProperty("overflow-y");
 });
 
 // Mask phone

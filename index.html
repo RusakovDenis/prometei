@@ -2,723 +2,719 @@
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Сайт с курсами для успешной сдачи ЕГЭ 2021">
-  <meta name="keywords" content="">
-  <meta name="robots" content="index, follow">
-  <title>Прометей | ЕГЭ 2021</title>
-  <meta name="theme-color" content="#FFFFFF">
-  <link rel="shortcut icon" href="img/favicon.ico">
-  <!-- Critical css -->
-  <style>
-    .preloader {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-      background-color: #ffffff;
-      opacity: 0;
-      -webkit-transition: 0.3s;
-      -o-transition: 0.3s;
-      transition: 0.3s
-    }
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Сайт с курсами для успешной сдачи ЕГЭ 2021">
+	<meta name="keywords" content="">
+	<meta name="robots" content="index, follow">
+	<title>Прометей | ЕГЭ 2021</title>
+	<meta name="theme-color" content="#FFFFFF">
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<!-- Critical css -->
+	<style>
+		.preloader {
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: -1;
+			background-color: #ffffff;
+			opacity: 0;
+			-webkit-transition: 0.3s;
+			-o-transition: 0.3s;
+			transition: 0.3s
+		}
 
-    .preloader--show {
-      z-index: 5;
-      visibility: visible;
-      opacity: 1;
-      -webkit-transition: 0.3s;
-      -o-transition: 0.3s;
-      transition: 0.3s
-    }
+		.preloader--show {
+			z-index: 5;
+			visibility: visible;
+			opacity: 1;
+			-webkit-transition: 0.3s;
+			-o-transition: 0.3s;
+			transition: 0.3s
+		}
 
-    .preloader__img {
-      width: 40px;
-      position: absolute;
-      top: calc(50% - 20px);
-      left: calc(50% - 20px)
-    }
+		.preloader__img {
+			width: 40px;
+			position: absolute;
+			top: calc(50% - 20px);
+			left: calc(50% - 20px)
+		}
 
-    @-webkit-keyframes preloaderSpin {
-      from {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg)
-      }
+		@-webkit-keyframes preloaderSpin {
+			from {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg)
+			}
 
-      to {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg)
-      }
-    }
+			to {
+				-webkit-transform: rotate(360deg);
+				transform: rotate(360deg)
+			}
+		}
 
-    @keyframes preloaderSpin {
-      from {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg)
-      }
+		@keyframes preloaderSpin {
+			from {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg)
+			}
 
-      to {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg)
-      }
-    }
+			to {
+				-webkit-transform: rotate(360deg);
+				transform: rotate(360deg)
+			}
+		}
 
-    .preloader__circle {
-      position: relative;
-      top: calc(50% - 35px);
-      width: 70px;
-      height: 70px;
-      margin: 0 auto;
-      text-align: center;
-      border: 4px solid rgba(0, 0, 0, .1);
-      border-radius: 100%;
-      border-left-color: var(--colorBlue);
-      -webkit-animation: preloaderSpin 1.2s linear infinite;
-      animation: preloaderSpin 1.2s linear infinite
-    }
-  </style>
-  <link rel="stylesheet" href="css/keen-slider.min.css">
-  <link rel="stylesheet" href="css/style.css">
+		.preloader__circle {
+			position: relative;
+			top: calc(50% - 35px);
+			width: 70px;
+			height: 70px;
+			margin: 0 auto;
+			text-align: center;
+			border: 4px solid rgba(0, 0, 0, .1);
+			border-radius: 100%;
+			border-left-color: var(--colorBlue);
+			-webkit-animation: preloaderSpin 1.2s linear infinite;
+			animation: preloaderSpin 1.2s linear infinite
+		}
+	</style>
+	<link rel="stylesheet" href="css/keen-slider.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body style="overflow-y:hidden;">
-  <div class="preloader preloader--show">
-    <div class="preloader__circle"></div>
-    <img class="preloader__img" src="img/logo-icon.png" alt="Логотип">
-  </div>
-  <header class="header">
-    <div class="header-wrap">
-      <div class="logo">
-        <img class="logo__text" src="img/logo-text.png" alt="Текст логотипа">
-      </div>
-      <nav class="nav">
-        <ul class="nav__list">
-          <li class="nav__item"><a class="nav__link" href="#about-us">О компании</a></li>
-          <li class="nav__item"><a class="nav__link" href="#teachers">Преподаватели</a></li>
-          <li class="nav__item"><a class="nav__link" href="#services">Услуги</a></li>
-          <li class="nav__item"><a class="nav__link" href="#reviews">Отзывы</a></li>
-          <li class="nav__item"><a class="nav__link" href="#info">Информация</a></li>
-          <li class="nav__item"><a class="nav__link" href="#contacts">Контакты</a></li>
-        </ul>
-      </nav>
-      <div class="header__right">
-        <div class="lang">
-          <a class="lang__link lang__link--current" href="#" aria-label="Выбран русский язык">
-            <svg class="lang__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="18">
-              <use xlink:href="img/sprite-icon.svg#ru"></use>
-            </svg>
-          </a>
-          <ul class="lang__list">
-            <li class="lang__item">
-              <a class="lang__link lang__link--active" href="#" aria-hidden="true">
-                <svg class="lang__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="18">
-                  <use xlink:href="img/sprite-icon.svg#ru"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="lang__item">
-              <a class="lang__link" href="#" aria-label="Выбрать английски язык">
-                <svg class="lang__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="18">
-                  <use xlink:href="img/sprite-icon.svg#en"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <button class="toggle-menu" id="toggle-menu" aria-label="Открыть меню" aria-expanded="false" tabindex="0">
-          <span class="toggle-menu__line"></span>
-        </button>
-        <div class="menu-left">
-          <nav class="menu-left__nav">
-            <ul class="menu-left__list">
-              <li class="menu-left__item"><a class="menu-left__link" href="#about-us">О компании</a></li>
-              <li class="menu-left__item"><a class="menu-left__link" href="#teachers">Преподаватели</a></li>
-              <li class="menu-left__item"><a class="menu-left__link" href="#services">Услуги</a></li>
-              <li class="menu-left__item"><a class="menu-left__link" href="#reviews">Отзывы</a></li>
-              <li class="menu-left__item"><a class="menu-left__link" href="#info">Информация</a></li>
-              <li class="menu-left__item"><a class="menu-left__link" href="#contacts">Контакты</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
-  <section class="slider" id="slider">
-    <div id="my-keen-slider" class="keen-slider zoom-out">
-      <div class="keen-slider__slide">
-        <div class="slider__content">
-          <div class="slider__card">
-            <div class="slider__card-wrap">
-              <h1 class="slider__title">Прометей</h1>
-              <p class="slider__description">Комплексная подготовка к
-                ОГЭ и ЕГЭ в группе и индивидуально</p>
-              <button class="btn">Записаться</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="keen-slider__slide">
-        <div class="slider__content">
-          <div class="slider__card">
-            <div class="slider__card-wrap">
-              <h1 class="slider__title">Прометей</h1>
-              <p class="slider__description">Комплексная подготовка к
-                ОГЭ и ЕГЭ в группе и индивидуально</p>
-              <button class="btn">Записаться</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="keen-slider__slide">
-        <div class="slider__content">
-          <div class="slider__card">
-            <div class="slider__card-wrap">
-              <h1 class="slider__title">Прометей</h1>
-              <p class="slider__description">Комплексная подготовка к
-                ОГЭ и ЕГЭ в группе и индивидуально</p>
-              <button class="btn">Записаться</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <button class="slider__btn slider__btn--prev" aria-label="Предыдущий баннер">
-    </button>
-    <button class="slider__btn slider__btn--next" aria-label="Следующий баннер">
-    </button>
-    <a class="link-bottom" href="#about-us" aria-label="Перейти к блоку 'О компании'"></a>
-    <div id="dots" class="dots"></div>
-  </section>
-  <div class="wrap">
-    <section class="about-us section" id="about-us">
-      <img class="about-us__img" src="img/about-us.webp" alt="Мы">
-      <div class="about-us__card">
-        <h2 class="about-us__title">О компании</h2>
-        <p class="about-us__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-          laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-          esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-          qui
-          officia deserunt mollit anim id est laborum.</p>
-      </div>
-    </section>
-    <section class="teachers section" id="teachers">
-      <h2 class="title">Преподаватели</h2>
-      <div class="teachers-wrap">
-        <div class="teachers__item">
-          <img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
-          <h3 class="teachers__name">Имя Фамилия</h3>
-          <p class="teachers__info">Математик</p>
-          <hr class="teachers__separator">
-          <p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
-        </div>
-        <div class="teachers__item">
-          <img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
-          <h3 class="teachers__name">Имя Фамилия</h3>
-          <p class="teachers__info">Математик</p>
-          <hr class="teachers__separator">
-          <p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
-        </div>
-        <div class="teachers__item">
-          <img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
-          <h3 class="teachers__name">Имя Фамилия</h3>
-          <p class="teachers__info">Математик</p>
-          <hr class="teachers__separator">
-          <p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
-        </div>
-        <div class="teachers__item">
-          <img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
-          <h3 class="teachers__name">Имя Фамилия</h3>
-          <p class="teachers__info">Математик</p>
-          <hr class="teachers__separator">
-          <p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
-        </div>
-        <div class="teachers__item">
-          <img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
-          <h3 class="teachers__name">Имя Фамилия</h3>
-          <p class="teachers__info">Математик</p>
-          <hr class="teachers__separator">
-          <p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
-        </div>
-        <div class="teachers__item">
-          <img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
-          <h3 class="teachers__name">Имя Фамилия</h3>
-          <p class="teachers__info">Математик</p>
-          <hr class="teachers__separator">
-          <p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
-        </div>
-        <div class="teachers__item">
-          <img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
-          <h3 class="teachers__name">Имя Фамилия</h3>
-          <p class="teachers__info">Математик</p>
-          <hr class="teachers__separator">
-          <p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
-        </div>
-        <div class="teachers__item">
-          <img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
-          <h3 class="teachers__name">Имя Фамилия</h3>
-          <p class="teachers__info">Математик</p>
-          <hr class="teachers__separator">
-          <p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
-        </div>
-      </div>
-    </section>
-    <section class="services section" id="services">
-      <h2 class="title">Услуги</h2>
-      <div class="services-wrap">
-        <div class="services__card">
-          <a class="services__link" href="#">
-            <h3 class="services__subtitle">ЕГЭ 2021</h3>
-            <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor
-              incididunt ut labore et dolore
-              magna
-            </p>
-            <div class="services__icon-wrap">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
-                stroke="none">
-                <path
-                  d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
-              </svg>
-            </div>
-          </a>
-        </div>
-        <div class="services__card">
-          <a class="services__link" href="#">
-            <h3 class="services__subtitle">ЕГЭ 2021</h3>
-            <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor
-              incididunt ut labore et dolore
-              magna
-            </p>
-            <div class="services__icon-wrap">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
-                stroke="none">
-                <path
-                  d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
-              </svg>
-            </div>
-          </a>
-        </div>
-        <div class="services__card">
-          <a class="services__link" href="#">
-            <h3 class="services__subtitle">ЕГЭ 2021</h3>
-            <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor
-              incididunt ut labore et dolore
-              magna
-            </p>
-            <div class="services__icon-wrap">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
-                stroke="none">
-                <path
-                  d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
-              </svg>
-            </div>
-          </a>
-        </div>
-        <div class="services__card">
-          <a class="services__link" href="#">
-            <h3 class="services__subtitle">ЕГЭ 2021</h3>
-            <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor
-              incididunt ut labore et dolore
-              magna
-            </p>
-            <div class="services__icon-wrap">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
-                stroke="none">
-                <path
-                  d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
-              </svg>
-            </div>
-          </a>
-        </div>
-        <div class="services__card">
-          <a class="services__link" href="#">
-            <h3 class="services__subtitle">ЕГЭ 2021</h3>
-            <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor
-              incididunt ut labore et dolore
-              magna
-            </p>
-            <div class="services__icon-wrap">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
-                stroke="none">
-                <path
-                  d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
-              </svg>
-            </div>
-          </a>
-        </div>
-        <div class="services__card">
-          <a class="services__link" href="#">
-            <h3 class="services__subtitle">ЕГЭ 2021</h3>
-            <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor
-              incididunt ut labore et dolore
-              magna
-            </p>
-            <div class="services__icon-wrap">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
-                stroke="none">
-                <path
-                  d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
-              </svg>
-            </div>
-          </a>
-        </div>
-        <div class="services__card">
-          <a class="services__link" href="#">
-            <h3 class="services__subtitle">ЕГЭ 2021</h3>
-            <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor
-              incididunt ut labore et dolore
-              magna
-            </p>
-            <div class="services__icon-wrap">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
-                stroke="none">
-                <path
-                  d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
-              </svg>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-    <section class="reviews section" id="reviews">
-      <h2 class="title">Отзывы</h2>
-      <div class="reviews-wrap">
-        <div class="reviews__item">
-          <div class="reviews__content">
-            <img class="reviews__img" src="img/reviews-avatar.png" alt="">
-            <div class="reviews__info">
-              <h3 class="reviews__name">Мария Петровна</h3>
-              <p class="reviews__description">Прошла 3 курса и сдалась</p>
-              <div class="rating">
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-              </div>
-            </div>
-          </div>
-          <blockquote class="reviews__blockquote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</blockquote>
-        </div>
-        <div class="reviews__item">
-          <div class="reviews__content">
-            <img class="reviews__img" src="img/reviews-avatar.png" alt="">
-            <div class="reviews__info">
-              <h3 class="reviews__name">Мария Петровна</h3>
-              <p class="reviews__description">Прошла 3 курса и сдалась</p>
-              <div class="rating">
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-              </div>
-            </div>
-          </div>
-          <blockquote class="reviews__blockquote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</blockquote>
-        </div>
-        <div class="reviews__item">
-          <div class="reviews__content">
-            <img class="reviews__img" src="img/reviews-avatar.png" alt="">
-            <div class="reviews__info">
-              <h3 class="reviews__name">Мария Петровна</h3>
-              <p class="reviews__description">Прошла 3 курса и сдалась</p>
-              <div class="rating">
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-              </div>
-            </div>
-          </div>
-          <blockquote class="reviews__blockquote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</blockquote>
-        </div>
-        <div class="reviews__item">
-          <div class="reviews__content">
-            <img class="reviews__img" src="img/reviews-avatar.png" alt="">
-            <div class="reviews__info">
-              <h3 class="reviews__name">Мария Петровна</h3>
-              <p class="reviews__description">Прошла 3 курса и сдалась</p>
-              <div class="rating">
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-              </div>
-            </div>
-          </div>
-          <blockquote class="reviews__blockquote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</blockquote>
-        </div>
-        <div class="reviews__item">
-          <div class="reviews__content">
-            <img class="reviews__img" src="img/reviews-avatar.png" alt="">
-            <div class="reviews__info">
-              <h3 class="reviews__name">Мария Петровна</h3>
-              <p class="reviews__description">Прошла 3 курса и сдалась</p>
-              <div class="rating">
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-              </div>
-            </div>
-          </div>
-          <blockquote class="reviews__blockquote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</blockquote>
-        </div>
-        <div class="reviews__item">
-          <div class="reviews__content">
-            <img class="reviews__img" src="img/reviews-avatar.png" alt="">
-            <div class="reviews__info">
-              <h3 class="reviews__name">Мария Петровна</h3>
-              <p class="reviews__description">Прошла 3 курса и сдалась</p>
-              <div class="rating">
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-                <div class="rating__star"></div>
-              </div>
-            </div>
-          </div>
-          <blockquote class="reviews__blockquote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</blockquote>
-        </div>
-      </div>
-    </section>
-    <section class="info section" id="info">
-      <h2 class="title">Информация</h2>
-      <div class="info-wrap">
-        <table class="table">
-          <tbody>
-            <tr class="table__row">
-              <td class="table__cell">Полное
-                наименование организации</td>
-              <td class="table__cell">Прометей</td>
-            </tr>
-            <tr class="table__row">
-              <td class="table__cell">Полное
-                наименование организации</td>
-              <td class="table__cell">Прометей</td>
-            </tr>
-            <tr class="table__row">
-              <td class="table__cell">Полное
-                наименование организации</td>
-              <td class="table__cell">Прометей</td>
-            </tr>
-            <tr class="table__row">
-              <td class="table__cell">Полное
-                наименование организации</td>
-              <td class="table__cell">Прометей</td>
-            </tr>
-            <tr class="table__row">
-              <td class="table__cell">Полное
-                наименование организации</td>
-              <td class="table__cell">Прометей</td>
-            </tr>
-            <tr class="table__row">
-              <td class="table__cell">Полное
-                наименование организации</td>
-              <td class="table__cell">Прометей</td>
-            </tr>
-            <tr class="table__row">
-              <td class="table__cell">Полное
-                наименование организации</td>
-              <td class="table__cell">Прометей</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-  </div>
-  <section class="contacts section" id="contacts">
-    <div class="contacts-wrap">
-      <h2 class="title">Контакты</h2>
-      <div class="contacts-grid">
-        <form class="form" method="post" action="">
-          <div class="form__row">
-            <div class="form__field">
-              <label class="form__label" for="name">Имя</label>
-              <input class="form__input" id="name" type="text" name="name" required="">
-              <span class="error-msg"></span>
-            </div>
-            <div class="form__field">
-              <label class="form__label" for="phone">Телефон</label>
-              <div class="form__field-phone">
-                <span class="form__code">+7</span>
-                <input class="form__input form__phone" id="phone" type="tel" name="phone" placeholder="(___) ___-__-__"
-                  required="" minlength="10">
-                <span class="error-msg"></span>
-              </div>
-            </div>
-            <div class="form__field">
-              <label class="form__label" for="email">E-mail</label>
-              <input class="form__input" id="email" type="email" name="email" required="">
-              <span class="error-msg"></span>
-            </div>
-          </div>
-          <div class="form__row">
-            <div class="form__field">
-              <label class="form__label" for="message">Сообщение</label>
-              <textarea class="form__textarea" id="message" name="message">
-              </textarea>
-            </div>
-          </div>
-          <div class="form__row">
-            <div class="form__field">
-              <label for="checkbox">
-                <input class="checkbox" id="checkbox" type="checkbox" required="">
-                <span class="custom-checkbox"></span>
-                <span class="checkbox-text">Даю согласие на обработку <a class="form__link" href="#"
-                    target="_blank">персональных&nbsp;данных</a></span>
-              </label>
-              <span class="error-msg"></span>
-            </div>
-          </div>
-          <button class="btn" type="submit">Отправить</button>
-        </form>
-        <div class="contacts__content">
-          <h3 class="contacts__title">Остались вопросы?</h3>
-          <p class="contacts__description">Оставьте заявку, и мы свяжемся с вами для консультации</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <footer class="footer">
-    <div class="footer-wrap">
-      <div class="footer__copyright">
-        <p class="footer__paragraph">Прометей</p>
-        <p class="footer__paragraph">Copyright © 2020</p>
-      </div>
-      <div class="footer__contacts">
-        <a class="footer__phone" href="tel:+7(918)552-66-32"><svg class="footer__icon-phone" width="24" height="24"
-            viewBox="0 0 24 24" stroke="#201f87" stroke-width="1.5" fill="none" focusable="false" aria-hidden="true">
-            <path
-              d="M12.7407967,18.4035953 L15.8976569,15.246735 L21.114676,18.885324 L19.9443794,20.055614 C19.1648657,20.8351277 18.020623,21.1243165 16.9643502,20.8087683 C13.7351168,19.8440753 10.8342484,18.0754771 8.26174492,15.5029737 C5.6892452,12.930474 3.92064841,10.0296102 2.95595454,6.80038244 C2.64039085,5.74410652 2.92958124,4.59985601 3.70910009,3.82033716 L4.87939464,2.65004261 L8.51798358,7.86706169 L5.36112331,11.023922">
-            </path>
-          </svg>+7 (918) 552-66-32</a>
-        <a class="footer__email" href="mailto:prometei@gmail.ru">
-          <svg class="footer__icon-email" width="24" height="24" viewBox="0 0 24 24" stroke="#201f87" stroke-width="1.5"
-            fill="none" focusable="false" aria-hidden="true">
-            <rect width="20" height="14" x="2" y="5"></rect>
-            <path stroke-linecap="round" d="M2 5l10 9 10-9"></path>
-            <path d="M2 19l6.825-7.8"></path>
-            <path d="M22 19l-6.844-7.822"></path>
-          </svg>
-          prometei@gmail.ru
-        </a>
-      </div>
-      <div class="footer__social social">
-        <a class="social__link" href="" target="_blank" rel="noopener noreferrer" aria-label="Вконтакте">
-          <svg class="social__icon" width="36" height="36" viewBox="0 0 24 24" fill="#201f87" focusable="false"
-            aria-hidden="true">
-            <path
-              d="M11.701 18.771h1.437s.433-.047.654-.284c.21-.221.21-.63.21-.63s-.031-1.927.869-2.21c.887-.281 2.012 1.86 3.211 2.683.916.629 1.605.494 1.605.494l3.211-.044s1.682-.105.887-1.426c-.061-.105-.451-.975-2.371-2.76-2.012-1.861-1.742-1.561.676-4.787 1.469-1.965 2.07-3.166 1.875-3.676-.166-.48-1.26-.361-1.26-.361l-3.602.031s-.27-.031-.465.09c-.195.119-.314.391-.314.391s-.572 1.529-1.336 2.82c-1.623 2.729-2.268 2.879-2.523 2.699-.604-.391-.449-1.58-.449-2.432 0-2.641.404-3.75-.781-4.035-.39-.091-.681-.15-1.685-.166-1.29-.014-2.378.01-2.995.311-.405.203-.72.652-.539.675.24.03.779.146 1.064.537.375.506.359 1.636.359 1.636s.211 3.116-.494 3.503c-.495.262-1.155-.28-2.595-2.756-.735-1.26-1.291-2.67-1.291-2.67s-.105-.256-.299-.406c-.227-.165-.557-.225-.557-.225l-3.435.03s-.51.016-.689.24c-.166.195-.016.615-.016.615s2.686 6.287 5.732 9.453c2.79 2.902 5.956 2.715 5.956 2.715l-.05-.055z">
-            </path>
-          </svg></a>
-        <a class="social__link" href="" target="_blank" rel="noopener noreferrer" aria-label="Инстаграм">
-          <svg class="social__icon" width="36" height="36" viewBox="0 0 24 24" fill="#201f87" focusable="false"
-            aria-hidden="true">
-            <path
-              d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z">
-            </path>
-          </svg></a>
-      </div>
-    </div>
-  </footer>
-  <button class="btn-top btn--hide" aria-label="Прокрутка в начало страницы">
-    <svg class="icon-arrow-top" width="42" height="42" viewBox="0 0 24 24" stroke="#201f87" stroke-width="1.5"
-      fill="none" focusable="false" aria-hidden="true">
-      <polyline points="6 14 12 8 18 14 18 14"></polyline>
-    </svg>
-  </button>
-  <!-- Service -->
-  <div class="service">
-    <div class="service__content">
-      <div class="service__header">
-        <h3 class="service__title">ЕГЭ 2021</h3>
-        <button class="service__btn--close btn--close" aria-label="Закрыть модальное окно">
-          <span class="cross"></span>
-        </button>
-      </div>
-      <div class="service__body">
-        <p class="service__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.</p>
-        <a class="service__link" href="#contacts">Записаться</a>
-      </div>
-    </div>
-  </div>
-  <!-- Preloader -->
-  <script>
-    const preloader = document.querySelector(".preloader");
+	<div class="preloader preloader--show">
+		<div class="preloader__circle"></div>
+		<img class="preloader__img" src="img/logo-icon.png" alt="Логотип">
+	</div>
+	<header class="header">
+		<div class="header-wrap">
+			<div class="logo">
+				<img class="logo__text" src="img/logo-text.png" alt="Текст логотипа">
+			</div>
+			<nav class="nav">
+				<ul class="nav__list">
+					<li class="nav__item"><a class="nav__link" href="#about-us">О компании</a></li>
+					<li class="nav__item"><a class="nav__link" href="#teachers">Преподаватели</a></li>
+					<li class="nav__item"><a class="nav__link" href="#services">Услуги</a></li>
+					<li class="nav__item"><a class="nav__link" href="#reviews">Отзывы</a></li>
+					<li class="nav__item"><a class="nav__link" href="#info">Информация</a></li>
+					<li class="nav__item"><a class="nav__link" href="#contacts">Контакты</a></li>
+				</ul>
+			</nav>
+			<div class="header__right">
+				<div class="lang">
+					<a class="lang__link lang__link--current" href="#" aria-label="Выбран русский язык">
+						<svg class="lang__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="18">
+							<use xlink:href="img/sprite-icon.svg#ru"></use>
+						</svg>
+					</a>
+					<ul class="lang__list">
+						<li class="lang__item">
+							<a class="lang__link lang__link--active" href="#" aria-hidden="true">
+								<svg class="lang__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="18">
+									<use xlink:href="img/sprite-icon.svg#ru"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="lang__item">
+							<a class="lang__link" href="#" aria-label="Выбрать английски язык">
+								<svg class="lang__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="18">
+									<use xlink:href="img/sprite-icon.svg#en"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<button class="toggle-menu" id="toggle-menu" aria-label="Открыть меню" aria-expanded="false" tabindex="0">
+					<span class="toggle-menu__line"></span>
+				</button>
+				<div class="menu-left">
+					<nav class="menu-left__nav">
+						<ul class="menu-left__list">
+							<li class="menu-left__item"><a class="menu-left__link" tabindex="-1" href="#about-us">О компании</a></li>
+							<li class="menu-left__item"><a class="menu-left__link" tabindex="-1" href="#teachers">Преподаватели</a>
+							</li>
+							<li class="menu-left__item"><a class="menu-left__link" tabindex="-1" href="#services">Услуги</a></li>
+							<li class="menu-left__item"><a class="menu-left__link" tabindex="-1" href="#reviews">Отзывы</a></li>
+							<li class="menu-left__item"><a class="menu-left__link" tabindex="-1" href="#info">Информация</a></li>
+							<li class="menu-left__item"><a class="menu-left__link" tabindex="-1" href="#contacts">Контакты</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section class="slider" id="slider">
+		<div id="my-keen-slider" class="keen-slider zoom-out">
+			<div class="keen-slider__slide">
+				<div class="slider__content">
+					<div class="slider__card">
+						<div class="slider__card-wrap">
+							<h1 class="slider__title">Прометей</h1>
+							<p class="slider__description">Комплексная подготовка к
+								ОГЭ и ЕГЭ в группе и индивидуально</p>
+							<a class="link" href="#contacts">Записаться</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="keen-slider__slide">
+				<div class="slider__content">
+					<div class="slider__card">
+						<div class="slider__card-wrap">
+							<h1 class="slider__title">Прометей</h1>
+							<p class="slider__description">Комплексная подготовка к
+								ОГЭ и ЕГЭ в группе и индивидуально</p>
+							<a class="link" href="#contacts">Записаться</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="keen-slider__slide">
+				<div class="slider__content">
+					<div class="slider__card">
+						<div class="slider__card-wrap">
+							<h1 class="slider__title">Прометей</h1>
+							<p class="slider__description">Комплексная подготовка к
+								ОГЭ и ЕГЭ в группе и индивидуально</p>
+							<a class="link" href="#contacts">Записаться</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button class="slider__btn slider__btn--prev" aria-label="Предыдущий баннер">
+		</button>
+		<button class="slider__btn slider__btn--next" aria-label="Следующий баннер">
+		</button>
+		<a class="link-bottom" href="#about-us" aria-label="Перейти к блоку 'О компании'"></a>
+		<div id="dots" class="dots"></div>
+	</section>
+	<div class="wrap">
+		<section class="about-us section" id="about-us">
+			<img class="about-us__img" src="img/about-us.webp" alt="Мы">
+			<div class="about-us__card">
+				<h2 class="about-us__title">О компании</h2>
+				<p class="about-us__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+					tempor
+					incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+					laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+					esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+					qui
+					officia deserunt mollit anim id est laborum.</p>
+			</div>
+		</section>
+		<section class="teachers section" id="teachers">
+			<h2 class="title">Преподаватели</h2>
+			<div class="teachers-wrap">
+				<div class="teachers__item">
+					<img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
+					<h3 class="teachers__name">Имя Фамилия</h3>
+					<p class="teachers__info">Математик</p>
+					<hr class="teachers__separator">
+					<p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+						tempor
+						incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
+				</div>
+				<div class="teachers__item">
+					<img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
+					<h3 class="teachers__name">Имя Фамилия</h3>
+					<p class="teachers__info">Математик</p>
+					<hr class="teachers__separator">
+					<p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+						tempor
+						incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
+				</div>
+				<div class="teachers__item">
+					<img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
+					<h3 class="teachers__name">Имя Фамилия</h3>
+					<p class="teachers__info">Математик</p>
+					<hr class="teachers__separator">
+					<p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+						tempor
+						incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
+				</div>
+				<div class="teachers__item">
+					<img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
+					<h3 class="teachers__name">Имя Фамилия</h3>
+					<p class="teachers__info">Математик</p>
+					<hr class="teachers__separator">
+					<p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+						tempor
+						incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
+				</div>
+				<div class="teachers__item">
+					<img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
+					<h3 class="teachers__name">Имя Фамилия</h3>
+					<p class="teachers__info">Математик</p>
+					<hr class="teachers__separator">
+					<p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+						tempor
+						incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
+				</div>
+				<div class="teachers__item">
+					<img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
+					<h3 class="teachers__name">Имя Фамилия</h3>
+					<p class="teachers__info">Математик</p>
+					<hr class="teachers__separator">
+					<p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+						tempor
+						incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
+				</div>
+				<div class="teachers__item">
+					<img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
+					<h3 class="teachers__name">Имя Фамилия</h3>
+					<p class="teachers__info">Математик</p>
+					<hr class="teachers__separator">
+					<p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+						tempor
+						incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
+				</div>
+				<div class="teachers__item">
+					<img class="teachers__img" src="img/teacher.webp" alt="Имя Фамилия">
+					<h3 class="teachers__name">Имя Фамилия</h3>
+					<p class="teachers__info">Математик</p>
+					<hr class="teachers__separator">
+					<p class="teachers__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+						tempor
+						incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc</p>
+				</div>
+			</div>
+		</section>
+		<section class="services section" id="services">
+			<h2 class="title">Услуги</h2>
+			<div class="services-wrap">
+				<div class="services__card">
+					<a class="services__link" href="1">
+						<h3 class="services__subtitle">ЕГЭ 2021</h3>
+						<p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+							tempor
+							incididunt ut labore et dolore
+							magna
+						</p>
+						<div class="services__icon-wrap">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
+								stroke="none">
+								<path
+									d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
+							</svg>
+						</div>
+					</a>
+				</div>
+				<div class="services__card">
+					<a class="services__link" href="1">
+						<h3 class="services__subtitle">ЕГЭ 2022</h3>
+						<p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+							tempor
+							incididunt ut labore et dolore
+							magna
+						</p>
+						<div class="services__icon-wrap">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
+								stroke="none">
+								<path
+									d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
+							</svg>
+						</div>
+					</a>
+				</div>
+				<div class="services__card">
+					<a class="services__link" href="1">
+						<h3 class="services__subtitle">ЕГЭ 2023</h3>
+						<p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+							tempor
+							incididunt ut labore et dolore
+							magna
+						</p>
+						<div class="services__icon-wrap">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
+								stroke="none">
+								<path
+									d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
+							</svg>
+						</div>
+					</a>
+				</div>
+				<div class="services__card">
+					<a class="services__link" href="1">
+						<h3 class="services__subtitle">ЕГЭ 2024</h3>
+						<p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+							tempor
+							incididunt ut labore et dolore
+							magna
+						</p>
+						<div class="services__icon-wrap">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
+								stroke="none">
+								<path
+									d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
+							</svg>
+						</div>
+					</a>
+				</div>
+				<div class="services__card">
+					<a class="services__link" href="1">
+						<h3 class="services__subtitle">ЕГЭ 2025</h3>
+						<p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+							tempor
+							incididunt ut labore et dolore
+							magna
+						</p>
+						<div class="services__icon-wrap">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
+								stroke="none">
+								<path
+									d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
+							</svg>
+						</div>
+					</a>
+				</div>
+				<div class="services__card">
+					<a class="services__link" href="1">
+						<h3 class="services__subtitle">ЕГЭ 2026</h3>
+						<p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+							tempor
+							incididunt ut labore et dolore
+							magna
+						</p>
+						<div class="services__icon-wrap">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
+								stroke="none">
+								<path
+									d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
+							</svg>
+						</div>
+					</a>
+				</div>
+				<div class="services__card">
+					<a class="services__link" href="1">
+						<h3 class="services__subtitle">ЕГЭ 2027</h3>
+						<p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+							tempor
+							incididunt ut labore et dolore
+							magna
+						</p>
+						<div class="services__icon-wrap">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="34" height="34" fill="#ffffff"
+								stroke="none">
+								<path
+									d="M 4 2 C 2.897 2 2 2.897 2 4 L 2 11.5 L 3 10.5 L 3 4 C 3 3.448 3.449 3 4 3 L 11 3 C 11.551 3 12 3.448 12 4 L 12 12 C 12 12.552 11.551 13 11 13 L 5.5 13 L 4.5 14 L 11 14 C 12.103 14 13 13.103 13 12 L 13 4 C 13 2.897 12.103 2 11 2 L 4 2 z M 4.4648438 8 L 5.8789062 9.4140625 L 1.0214844 14.271484 L 1.7285156 14.978516 L 6.5859375 10.121094 L 8 11.535156 L 8 8 L 4.4648438 8 z" />
+							</svg>
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
+		<section class="reviews section" id="reviews">
+			<h2 class="title">Отзывы</h2>
+			<div class="reviews-wrap">
+				<div class="reviews__item">
+					<div class="reviews__content">
+						<img class="reviews__img" src="img/reviews-avatar.png" alt="">
+						<div class="reviews__info">
+							<h3 class="reviews__name">Мария Петровна</h3>
+							<p class="reviews__description">Прошла 3 курса и сдалась</p>
+							<div class="rating">
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+							</div>
+						</div>
+					</div>
+					<blockquote class="reviews__blockquote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+						exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</blockquote>
+				</div>
+				<div class="reviews__item">
+					<div class="reviews__content">
+						<img class="reviews__img" src="img/reviews-avatar.png" alt="">
+						<div class="reviews__info">
+							<h3 class="reviews__name">Мария Петровна</h3>
+							<p class="reviews__description">Прошла 3 курса и сдалась</p>
+							<div class="rating">
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+							</div>
+						</div>
+					</div>
+					<blockquote class="reviews__blockquote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+						exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</blockquote>
+				</div>
+				<div class="reviews__item">
+					<div class="reviews__content">
+						<img class="reviews__img" src="img/reviews-avatar.png" alt="">
+						<div class="reviews__info">
+							<h3 class="reviews__name">Мария Петровна</h3>
+							<p class="reviews__description">Прошла 3 курса и сдалась</p>
+							<div class="rating">
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+							</div>
+						</div>
+					</div>
+					<blockquote class="reviews__blockquote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+						exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</blockquote>
+				</div>
+				<div class="reviews__item">
+					<div class="reviews__content">
+						<img class="reviews__img" src="img/reviews-avatar.png" alt="">
+						<div class="reviews__info">
+							<h3 class="reviews__name">Мария Петровна</h3>
+							<p class="reviews__description">Прошла 3 курса и сдалась</p>
+							<div class="rating">
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+							</div>
+						</div>
+					</div>
+					<blockquote class="reviews__blockquote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+						exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</blockquote>
+				</div>
+				<div class="reviews__item">
+					<div class="reviews__content">
+						<img class="reviews__img" src="img/reviews-avatar.png" alt="">
+						<div class="reviews__info">
+							<h3 class="reviews__name">Мария Петровна</h3>
+							<p class="reviews__description">Прошла 3 курса и сдалась</p>
+							<div class="rating">
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+							</div>
+						</div>
+					</div>
+					<blockquote class="reviews__blockquote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+						exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</blockquote>
+				</div>
+				<div class="reviews__item">
+					<div class="reviews__content">
+						<img class="reviews__img" src="img/reviews-avatar.png" alt="">
+						<div class="reviews__info">
+							<h3 class="reviews__name">Мария Петровна</h3>
+							<p class="reviews__description">Прошла 3 курса и сдалась</p>
+							<div class="rating">
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+								<div class="rating__star"></div>
+							</div>
+						</div>
+					</div>
+					<blockquote class="reviews__blockquote">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+						exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</blockquote>
+				</div>
+			</div>
+		</section>
+		<section class="info section" id="info">
+			<h2 class="title">Информация</h2>
+			<div class="info-wrap">
+				<table class="table">
+					<tbody>
+						<tr class="table__row">
+							<td class="table__cell">Полное
+								наименование организации</td>
+							<td class="table__cell">Прометей</td>
+						</tr>
+						<tr class="table__row">
+							<td class="table__cell">Полное
+								наименование организации</td>
+							<td class="table__cell">Прометей</td>
+						</tr>
+						<tr class="table__row">
+							<td class="table__cell">Полное
+								наименование организации</td>
+							<td class="table__cell">Прометей</td>
+						</tr>
+						<tr class="table__row">
+							<td class="table__cell">Полное
+								наименование организации</td>
+							<td class="table__cell">Прометей</td>
+						</tr>
+						<tr class="table__row">
+							<td class="table__cell">Полное
+								наименование организации</td>
+							<td class="table__cell">Прометей</td>
+						</tr>
+						<tr class="table__row">
+							<td class="table__cell">Полное
+								наименование организации</td>
+							<td class="table__cell">Прометей</td>
+						</tr>
+						<tr class="table__row">
+							<td class="table__cell">Полное
+								наименование организации</td>
+							<td class="table__cell">Прометей</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</div>
+	<section class="contacts section" id="contacts">
+		<div class="contacts-wrap">
+			<h2 class="title base-box-shadow">Контакты</h2>
+			<div class="contacts-grid">
+				<form class="form" method="post" action="">
+					<div class="form__row">
+						<div class="form__field">
+							<label class="form__label" for="name">Имя</label>
+							<input class="form__input" id="name" type="text" name="name" required="">
+							<span class="error-msg"></span>
+						</div>
+						<div class="form__field">
+							<label class="form__label" for="phone">Телефон</label>
+							<div class="form__field-phone">
+								<span class="form__code">+7</span>
+								<input class="form__input form__phone" id="phone" type="tel" name="phone" placeholder="(___) ___-__-__"
+									required="" minlength="10">
+								<span class="error-msg"></span>
+							</div>
+						</div>
+						<div class="form__field">
+							<label class="form__label" for="email">E-mail</label>
+							<input class="form__input" id="email" type="email" name="email" required="">
+							<span class="error-msg"></span>
+						</div>
+					</div>
+					<div class="form__row">
+						<div class="form__field">
+							<label class="form__label" for="message">Сообщение</label>
+							<textarea class="form__textarea" rows="5" value="" id="message" name="message">
+							</textarea>
+						</div>
+					</div>
+					<div class="form__row">
+						<div class="form__field">
+							<label for="checkbox">
+								<input class="checkbox" id="checkbox" type="checkbox" required="">
+								<span class="custom-checkbox"></span>
+								<span class="checkbox-text">Даю согласие на обработку <a class="form__link" href="#"
+										target="_blank">персональных&nbsp;данных</a></span>
+							</label>
+							<span class="error-msg"></span>
+						</div>
+					</div>
+					<button class="btn" type="submit">Отправить</button>
+				</form>
+				<div class="contacts__content">
+					<h3 class="contacts__title">Остались вопросы?</h3>
+					<p class="contacts__description">Оставьте заявку, и мы свяжемся с вами для консультации</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="footer">
+		<div class="footer-wrap">
+			<div class="footer__copyright">
+				<p class="footer__paragraph">Прометей</p>
+				<p class="footer__paragraph">Copyright © 2020</p>
+			</div>
+			<div class="footer__contacts">
+				<a class="footer__phone" href="tel:+7(918)552-66-32">
+					<svg class="footer__icon-phone" width="24" height="24" stroke="#fc5741" stroke-width="1.5" fill="none"
+						aria-hidden="true">
+						<path
+							d="M12.74 18.404l3.158-3.157 5.217 3.638-1.17 1.17a3 3 0 01-2.98.754c-3.23-.965-6.13-2.734-8.703-5.306C5.689 12.93 3.92 10.03 2.956 6.8a3 3 0 01.753-2.98l1.17-1.17 3.639 5.217-3.157 3.157" />
+					</svg>
+					+7 (918) 552-66-32
+				</a>
+				<a class="footer__email" href="mailto:prometei@gmail.ru">
+					<svg class="footer__icon-email" width="24" height="24" stroke="#fc5741" stroke-width="1.5" fill="none"
+						aria-hidden="true">
+						<path d="M2 5h20v14H2z" />
+						<path stroke-linecap="round" d="M2 5l10 9 10-9" />
+						<path d="M2 19l6.825-7.8M22 19l-6.844-7.822" />
+					</svg>
+					prometei@gmail.ru
+				</a>
+			</div>
+			<div class="footer__social social">
+				<a class="social__link" href="" target="_blank" rel="noopener noreferrer" aria-label="Вконтакте">
+					<svg class="social__icon" width="36" height="36" viewBox="0 0 24 24" fill="#fc5741" aria-hidden="true">
+						<path
+							d="M11.701 18.771h1.437s.433-.047.654-.284c.21-.221.21-.63.21-.63s-.031-1.927.869-2.21c.887-.281 2.012 1.86 3.211 2.683.916.629 1.605.494 1.605.494l3.211-.044s1.682-.105.887-1.426c-.061-.105-.451-.975-2.371-2.76-2.012-1.861-1.742-1.561.676-4.787 1.469-1.965 2.07-3.166 1.875-3.676-.166-.48-1.26-.361-1.26-.361l-3.602.031s-.27-.031-.465.09c-.195.119-.314.391-.314.391s-.572 1.529-1.336 2.82c-1.623 2.729-2.268 2.879-2.523 2.699-.604-.391-.449-1.58-.449-2.432 0-2.641.404-3.75-.781-4.035-.39-.091-.681-.15-1.685-.166-1.29-.014-2.378.01-2.995.311-.405.203-.72.652-.539.675.24.03.779.146 1.064.537.375.506.359 1.636.359 1.636s.211 3.116-.494 3.503c-.495.262-1.155-.28-2.595-2.756-.735-1.26-1.291-2.67-1.291-2.67s-.105-.256-.299-.406c-.227-.165-.557-.225-.557-.225l-3.435.03s-.51.016-.689.24c-.166.195-.016.615-.016.615s2.686 6.287 5.732 9.453c2.79 2.902 5.956 2.715 5.956 2.715l-.05-.055z" />
+					</svg>
+				</a>
+				<a class="social__link" href="" target="_blank" rel="noopener noreferrer" aria-label="Инстаграм">
+					<svg class="social__icon" width="36" height="36" viewBox="0 0 24 24" fill="#fc5741" aria-hidden="true">
+						<path
+							d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913a5.885 5.885 0 001.384 2.126A5.868 5.868 0 004.14 23.37c.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558a5.898 5.898 0 002.126-1.384 5.86 5.86 0 001.384-2.126c.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913a5.89 5.89 0 00-1.384-2.126A5.847 5.847 0 0019.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227a3.81 3.81 0 01-.899 1.382 3.744 3.744 0 01-1.38.896c-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421a3.716 3.716 0 01-1.379-.899 3.644 3.644 0 01-.9-1.38c-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 01-2.88 0 1.44 1.44 0 012.88 0z" />
+					</svg>
+				</a>
+			</div>
+		</div>
+	</footer>
+	<button class="btn-top btn--hide" aria-label="Прокрутка в начало страницы">
+		<svg class="icon-arrow-top" width="42" height="42" viewBox="0 0 24 24" stroke="#201f87" stroke-width="1.5"
+			fill="none" focusable="false" aria-hidden="true">
+			<polyline points="6 14 12 8 18 14 18 14"></polyline>
+		</svg>
+	</button>
+	<!-- Service -->
+	<div class="service">
+		<div class="service__content">
+			<div class="service__header">
+				<h3 class="service__title"></h3>
+				<button class="service__btn--close btn--close" aria-label="Закрыть модальное окно">
+					<span class="cross"></span>
+				</button>
+			</div>
+			<div class="service__body">
+				<p class="service__description"></p>
+				<a class="link service__link" href="#contacts">Записаться</a>
+			</div>
+		</div>
+	</div>
+	<!-- Preloader -->
+	<script>
+		const preloader = document.querySelector(".preloader");
 
-    window.onload = () => {
-      setTimeout(() => {
-        preloader.classList.remove("preloader--show");
-        document.body.style.removeProperty("overflow-y");
-      }, 1500);
-      setTimeout(() => {
-        preloader.style.display = "none";
-      }, 2000);
-    }
-  </script>
-  <script src="js/keen-slider.min.js"></script>
-  <script src="js/imask.min.js"></script>
-  <script src="js/common.js"></script>
-  <script>
-    window.addEventListener("scroll", () => {
-      setTimeout(() => {
+		window.onload = () => {
+			setTimeout(() => {
+				preloader.classList.remove("preloader--show");
+				document.body.style.removeProperty("overflow-y");
+			}, 1500);
+			setTimeout(() => {
+				preloader.style.display = "none";
+			}, 2000);
+		}
+	</script>
+	<script src="js/keen-slider.min.js"></script>
+	<script src="js/imask.min.js"></script>
+	<script src="js/common.js"></script>
+	<script>
+		window.addEventListener("scroll", () => {
+			setTimeout(() => {
 
-      }, 1000), {
-        once: true
-      }
-    });
-  </script>
+			}, 1000), {
+				once: true
+			}
+		});
+	</script>
 </body>
 
 </html>
