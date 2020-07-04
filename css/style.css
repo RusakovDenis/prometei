@@ -560,11 +560,10 @@ body {
 
 @media (max-width: 1140px) {
   .slider__card {
-    bottom: 100px;
+    bottom: 170px;
     left: 50%;
     width: 100%;
     max-width: 400px;
-    margin-bottom: 30px;
     text-align: center;
     transform: translateX(-50%);
   }
@@ -905,6 +904,10 @@ body {
     scrollbar-width: 16px;
     scroll-snap-points-x: repeat(311px);
     scroll-snap-type: x mandatory;
+  }
+
+  .teachers-wrap::-webkit-scrollbar {
+    width: 8px;
   }
 
   .teachers-wrap::-webkit-scrollbar-track {
