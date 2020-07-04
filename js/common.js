@@ -81,38 +81,47 @@ const addActiveClass = () => {
 }
 
 // Slider
-let elements = document.querySelectorAll(".zoom-out__slide");
+let keenSliderSlideAll = document.querySelectorAll(".keen-slider__slide");
 let slider = new KeenSlider("#my-keen-slider", {
   loop: true,
-  slides: elements.length,
+  slides: keenSliderSlideAll.length,
   duration: 1500,
   initial: 0,
   move: s => {
-    elements.forEach((element, idx) => {
+    keenSliderSlideAll.forEach((element, idx) => {
       moveElement(element, idx, s.details());
     });
   },
   created: function (instance) {
-    document.querySelector(".slider__btn--prev").addEventListener("click", function () {
+    let sliderBtnPrev = document.querySelector(".slider__btn--prev");
+
+    sliderBtnPrev.addEventListener("click", () => {
       instance.prev();
     });
+    sliderBtnPrev.setAttribute("aria-label", "Предыдущий слайд");
 
-    document.querySelector(".slider__btn--next").addEventListener("click", function () {
+    let sliderBtnNext = document.querySelector(".slider__btn--next");
+
+    sliderBtnNext.addEventListener("click", () => {
       instance.next();
     });
+    sliderBtnPrev.setAttribute("aria-label", "Предыдущий слайд");
 
-    let dotsWrap = document.getElementById("dots");
-    let slides = document.querySelectorAll(".keen-slider__slide");
+    let dots = document.getElementById("dots");
 
-    slides.forEach(function (t, idx) {
+    keenSliderSlideAll.forEach(function (t, idx) {
       let dot = document.createElement("button");
-      dot.classList.add("dot");
-      dotsWrap.appendChild(dot);
 
-      dot.addEventListener("click", function () {
+      dot.classList.add("dot");
+      dots.appendChild(dot);
+
+      dot.addEventListener("click", () => {
         instance.moveToSlide(idx);
       });
+
+      dot.setAttribute("aria-label", "Слайд");
     });
+
     updateClasses(instance);
   },
   slideChanged(instance) {
@@ -135,15 +144,10 @@ function moveElement(element, idx, details) {
 // Slider update classes
 function updateClasses(instance) {
   let slide = instance.details().relativeSlide;
-  let btnPrev = document.querySelector(".slider__btn--prev");
-  let btnNext = document.querySelector(".slider__btn--next");
 
-  slide === 0 ? btnPrev.classList.add("arrow--disabled") : btnPrev.classList.remove("arrow--disabled");
-  slide === instance.details().size - 1 ? btnNext.classList.add("arrow--disabled") : btnNext.classList.remove("arrow--disabled");
+  let dotAll = document.querySelectorAll(".dot");
 
-  let dots = document.querySelectorAll(".dot");
-
-  dots.forEach(function (dot, idx) {
+  dotAll.forEach(function (dot, idx) {
     idx === slide ? dot.classList.add("dot--active") : dot.classList.remove("dot--active");
   });
 }
@@ -258,135 +262,3 @@ let phoneMask = IMask(document.querySelector(".form__phone"), {
   mask: "(000) 000-00-00",
   lazy: false
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//////////////////////////
-
-// Message only numbers
-// document.addEventListener("DOMContentLoaded", function () {
-//   const ele = document.getElementById("phone");
-//   const state = {
-//     value: ele.value,
-//   };
-
-//   ele.addEventListener("keydown", function (e) {
-//     const target = e.target;
-
-//     state.selectionStart = target.selectionStart;
-//     state.selectionEnd = target.selectionEnd;
-//   });
-
-//   ele.addEventListener("input", function (e) {
-//     const target = e.target;
-//     if (/^[0-9\s]*$/.test(target.value)) {
-//       // state.value = target.value;
-//     } else {
-//       // target.value = state.value;
-//       // target.setSelectionRange(state.selectionStart, state.selectionEnd);
-//     }
-//   });
-// });
-
-// Form
-const form = document.querySelector("form");
-const email = document.querySelector('input[type="email"]');
-
-function showError(input, msg) {
-  const parent = input.parentElement;
-  parent.className = "error";
-  const error = parent.querySelector(".error-msg");
-  error.textContent = msg;
-  error.style.display = "block";
-
-  const timer = setTimeout(() => {
-    error.style.display = "none";
-    parent.className = "";
-    clearTimeout(timer);
-  }, 4000);
-}
-
-function showSuccess(input) {
-  const parent = input.parentElement;
-  parent.className = "success";
-}
-
-function checkEmail(input) {
-  const regex = /^\S+@\S+\.\S+$/;
-
-  regex.test(input.value.trim())
-    ? showSuccess(input)
-    : showError(input, `Email заполнен неверно`);
-}
-
-function checkRequired(inputArr) {
-  inputArr.forEach((input) => {
-    input.value.trim() === ""
-      ? showError(input, `${getFieldName(input)} is required`)
-      : showSuccess(input);
-  });
-}
-
-function checkLength(input, min, max) {
-  if (input.value.length < min) {
-    showError(
-      input,
-      `${getFieldName(input)} must be at least ${min} characters`
-    );
-  } else if (input.value.length > max) {
-    showError(
-      input,
-      `${getFieldName(input)} must be less than ${max} characters`
-    );
-  } else {
-    showSuccess(input);
-  }
-}
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  checkRequired([email]);
-  checkEmail(email);
-});
-
-
-
-
-
-// document.addEventListener('touchstart', onTouchStart, { passive: true }); 
-
-
-// let vh = window.innerHeight * 0.01;
-// document.documentElement.style.setProperty("--vh", `${vh}px`);
-
-const observer = new IntersectionObserver(handler, {
-  rootMargin: "0px",
-  threshold: 0.1,
-});
-
-const images = document.querySelectorAll("img[data-src]");
-
-images.forEach(img => {
-  observer.observe(img);
-});
-
-function handler(entries, observer) {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      loadImage(entry.target);
-      observer.unobserve(entry.target);
-    }
-  });
-}
