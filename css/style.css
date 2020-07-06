@@ -1599,6 +1599,7 @@ body {
 }
 
 .reviews__item::after {
+  font-family: 'Catamaran', sans-serif;
   position: absolute;
   top: -15px;
   right: -5px;
@@ -1765,6 +1766,7 @@ body {
 }
 
 .contacts {
+  margin-bottom: 100px;
   background: -webkit-gradient(
     linear,
     left top,
