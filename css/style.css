@@ -476,12 +476,13 @@ body {
   display: inline-block;
   height: 18px;
   padding: 10px;
+  border-radius: 5px;
   -webkit-transition: var(--durationAnimation, 0.4s);
   transition: var(--durationAnimation, 0.4s);
 }
 
-.lang__list .lang__link:hover {
-  background-color: hsl(0, 0%, 85%);
+.lang__dropdown .lang__link:hover {
+  background-color: hsl(0, 0%, 90%);
 }
 
 .lang__link--active {

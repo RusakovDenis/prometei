@@ -16,34 +16,20 @@ document.querySelectorAll("a[href^='#']").forEach(link => {
     e.preventDefault();
 
     document.body.style.removeProperty("overflow-y");
-
     document.querySelector(this.hash).scrollIntoView({
       behavior: "smooth"
     });
   });
 });
 
-// Toggle menu
+// Mobile toggle-menu and menu left
 if (window.matchMedia("(max-width: 991px)").matches) {
+  // Toggle menu
   const toggleMenu = document.querySelector(".toggle-menu");
   const menuLeft = document.querySelector(".menu-left");
 
-  toggleMenu.addEventListener("click", () => {
-    toggleMenu.classList.toggle("toggle-menu--active");
-    toggleMenu.setAttribute("aria-expanded", true);
-    toggleVisibleMenu();
-  });
-
-  document.addEventListener("mouseup", function (e) {
-    if (e.target !== toggleMenu && e.target == menuLeft) {
-      toggleMenu.classList.remove("toggle-menu--active");
-      toggleMenu.setAttribute("aria-expanded", false);
-      toggleVisibleMenu();
-    }
-  });
-
   // Menu left
-  const toggleVisibleMenu = () => {
+  const toggleVisibleMenuLeft = () => {
     menuLeft.classList.add("menu-left--apperance");
 
     if (!menuLeft.classList.contains("menu-left--visible")) {
@@ -55,17 +41,32 @@ if (window.matchMedia("(max-width: 991px)").matches) {
     }
   }
 
-  // Click's meni left link
+  toggleMenu.addEventListener("click", () => {
+    toggleMenu.classList.toggle("toggle-menu--active");
+    toggleMenu.setAttribute("aria-expanded", true);
+    toggleVisibleMenuLeft();
+  });
+
+  document.addEventListener("mouseup", function (e) {
+    if (e.target !== toggleMenu && e.target == menuLeft) {
+      toggleMenu.classList.remove("toggle-menu--active");
+      toggleMenu.setAttribute("aria-expanded", false);
+      toggleVisibleMenuLeft();
+    }
+  });
+
+  // Click's menu left link
   document.querySelectorAll(".menu-left__link").forEach(menuLiftLink => {
     menuLiftLink.addEventListener("click", function (e) {
       e.preventDefault();
 
       toggleMenu.classList.toggle("toggle-menu--active");
-      toggleVisibleMenu();
+      toggleVisibleMenuLeft();
     });
   });
 }
 
+// Nav
 let navLinks = document.querySelectorAll(".nav__link");
 
 const addActiveClass = () => {
@@ -95,6 +96,7 @@ const slider = new KeenSlider("#my-keen-slider", {
     });
   },
   created: function (instance) {
+    // Slider btns
     const sliderBtnPrev = document.querySelector(".slider__btn--prev");
 
     sliderBtnPrev.addEventListener("click", () => {
@@ -107,12 +109,13 @@ const slider = new KeenSlider("#my-keen-slider", {
     sliderBtnNext.addEventListener("click", () => {
       instance.next();
     });
-    sliderBtnPrev.setAttribute("aria-label", "Предыдущий слайд");
+    sliderBtnNext.setAttribute("aria-label", "Следующий слайд");
 
+    // Dots
     const dots = document.getElementById("dots");
 
     keenSliderSlideAll.forEach(function (t, idx) {
-      const dot = document.createElement("button");
+      let dot = document.createElement("button");
 
       dot.classList.add("dot");
       dots.appendChild(dot);
