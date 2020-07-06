@@ -95,7 +95,9 @@
 	<header class="header">
 		<div class="header-wrap">
 			<div class="logo">
-				<img class="logo__img" src="img/logo.png" alt="Логотип">
+				<a href="#slider">
+					<img class="logo__img" src="img/logo.png" alt="Логотип">
+				</a>
 			</div>
 			<nav class="nav">
 				<ul class="nav__list">
@@ -114,15 +116,13 @@
 							<use xlink:href="img/sprite-icon.svg#ru"></use>
 						</svg>
 					</a>
-					<ul class="lang__list">
-						<li class="lang__item">
-							<a class="lang__link" href="#" aria-label="Выбрать английски язык">
-								<svg class="lang__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="18">
-									<use xlink:href="img/sprite-icon.svg#en"></use>
-								</svg>
-							</a>
-						</li>
-					</ul>
+					<div class="lang__dropdown">
+						<a class="lang__link" href="#" aria-label="Выбрать английскиq язык">
+							<svg class="lang__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="18">
+								<use xlink:href="img/sprite-icon.svg#en"></use>
+							</svg>
+						</a>
+					</div>
 				</div>
 				<button class="toggle-menu" id="toggle-menu" aria-label="Открыть меню" aria-expanded="false" tabindex="0">
 					<span class="toggle-menu__line"></span>
