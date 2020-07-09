@@ -83,8 +83,8 @@
 		}
 	</style>
 	<link rel="stylesheet" href="css/keen-slider.min.css">
+	<link rel="stylesheet" href="css/scrollanim.min.css">
 	<link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body style="overflow-y:hidden;">
@@ -144,7 +144,7 @@
 		</div>
 	</header>
 	<section class="slider" id="slider">
-		<div id="my-keen-slider" class="keen-slider zoom-out">
+		<div id="my-keen-slider" class="keen-slider">
 			<div class="keen-slider__slide">
 				<div class="slider__content">
 					<div class="slider__card">
@@ -282,6 +282,41 @@
 		</section>
 		<section class="services section" id="services">
 			<h2 class="title">Услуги</h2>
+			<div class="stages">
+				<div class="stages__row">
+					<div class="stages__icon" data-kui-anim="bounceIn">
+						<img class="stages__img" src="img/stage.svg" alt="">
+					</div>
+					<div class="stages__content" data-kui-anim="slideInLeft">
+						<h3 class="stages__subtitle">Регистрация в школе</h3>
+						<p class="stages__description">Заполнение данных о себе в школе, после - данны вводятся в базу данных и Вам
+							выдаётся логи и пароль для
+							следующего этапа - авторизации</p>
+					</div>
+				</div>
+				<div class="stages__row">
+					<div class="stages__icon" data-kui-anim="bounceIn">
+						<img class="stages__img" src="img/stage.svg" alt="">
+					</div>
+					<div class="stages__content" data-kui-anim="slideInRight">
+						<h3 class="stages__subtitle">Регистрация в школе</h3>
+						<p class="stages__description">Заполнение данных о себе в школе, после - данны вводятся в базу данных и Вам
+							выдаётся логи и пароль для
+							следующего этапа - авторизации</p>
+					</div>
+				</div>
+				<div class="stages__row">
+					<div class="stages__icon" data-kui-anim="bounceIn">
+						<img class="stages__img" src="img/stage.svg" alt="">
+					</div>
+					<div class="stages__content" data-kui-anim="slideInLeft">
+						<h3 class="stages__subtitle">Регистрация в школе</h3>
+						<p class="stages__description">Заполнение данных о себе в школе, после - данны вводятся в базу данных и Вам
+							выдаётся логи и пароль для
+							следующего этапа - авторизации</p>
+					</div>
+				</div>
+			</div>
 			<div class="services-wrap">
 				<div class="services__card">
 					<a class="services__link" href="1">
@@ -664,7 +699,19 @@
 				</button>
 			</div>
 			<div class="service__body">
-				<p class="service__description"></p>
+				<p class="service__description">Text text text text text text text text text text text text text text text text
+					text text text text text text text text text text text text text text text text text text text text text text
+					text text text text text text text text text text text text text text text text text text text text text text
+					text text text text text text text text text text text text text text text text text text text text text text
+					text text text text text text text text text text text text text text text text text text text text text text
+					text text text text text text text text text text text text text text text text text text text text text text
+					text text text text text text text text text text text text text text text text text text text text text text
+					text text text text text text text text text text text text text text text text text text text text text text
+					text text text text text text text text text text text text text text text text text text text text text text
+					text text text text text text text text text text text text text text text text text text text text text text
+					text text text text text text text text text text text text text text text text text text text text text text
+					text text text text text text text text text text text text text text text text text text text text text text
+					text text text text text text text text text text text text text text text text</p>
 				<a class="link service__link" href="#contacts">Записаться</a>
 			</div>
 		</div>
@@ -684,6 +731,7 @@
 		}
 	</script>
 	<script src="js/keen-slider.min.js"></script>
+	<script src="js/scrollanim.min.js"></script>
 	<script src="js/imask.min.js"></script>
 	<script src="js/common.js"></script>
 	<script>

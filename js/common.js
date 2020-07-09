@@ -84,77 +84,77 @@ const addActiveClass = () => {
 }
 
 // Slider
-const keenSliderSlideAll = document.querySelectorAll(".keen-slider__slide");
-const slider = new KeenSlider("#my-keen-slider", {
-  loop: true,
-  slides: keenSliderSlideAll.length,
-  duration: 1500,
-  initial: 0,
-  move: s => {
-    keenSliderSlideAll.forEach((element, idx) => {
-      moveElement(element, idx, s.details());
-    });
-  },
-  created: function (instance) {
-    // Slider btns
-    const sliderBtnPrev = document.querySelector(".slider__btn--prev");
+// const keenSliderSlideAll = document.querySelectorAll(".keen-slider__slide");
+// const slider = new KeenSlider("#my-keen-slider", {
+//   loop: true,
+//   slides: keenSliderSlideAll.length,
+//   duration: 1500,
+//   initial: 0,
+//   // move: s => {
+//   //   keenSliderSlideAll.forEach((element, idx) => {
+//   //     moveElement(element, idx, s.details());
+//   //   });
+//   // },
+//   created: function (instance) {
+//     // Slider btns
+//     const sliderBtnPrev = document.querySelector(".slider__btn--prev");
 
-    sliderBtnPrev.addEventListener("click", () => {
-      instance.prev();
-    });
-    sliderBtnPrev.setAttribute("aria-label", "Предыдущий слайд");
+//     sliderBtnPrev.addEventListener("click", () => {
+//       instance.prev();
+//     });
+//     sliderBtnPrev.setAttribute("aria-label", "Предыдущий слайд");
 
-    const sliderBtnNext = document.querySelector(".slider__btn--next");
+//     const sliderBtnNext = document.querySelector(".slider__btn--next");
 
-    sliderBtnNext.addEventListener("click", () => {
-      instance.next();
-    });
-    sliderBtnNext.setAttribute("aria-label", "Следующий слайд");
+//     sliderBtnNext.addEventListener("click", () => {
+//       instance.next();
+//     });
+//     sliderBtnNext.setAttribute("aria-label", "Следующий слайд");
 
-    // Dots
-    const dots = document.getElementById("dots");
+//     // Dots
+//     const dots = document.getElementById("dots");
 
-    keenSliderSlideAll.forEach(function (t, idx) {
-      let dot = document.createElement("button");
+//     keenSliderSlideAll.forEach(function (t, idx) {
+//       let dot = document.createElement("button");
 
-      dot.classList.add("dot");
-      dots.appendChild(dot);
+//       dot.classList.add("dot");
+//       dots.appendChild(dot);
 
-      dot.addEventListener("click", () => {
-        instance.moveToSlide(idx);
-      });
+//       dot.addEventListener("click", () => {
+//         instance.moveToSlide(idx);
+//       });
 
-      dot.setAttribute("aria-label", "Слайд");
-    });
+//       dot.setAttribute("aria-label", "Слайд");
+//     });
 
-    updateClasses(instance);
-  },
-  slideChanged(instance) {
-    updateClasses(instance);
-  }
-});
+//     updateClasses(instance);
+//   },
+//   slideChanged(instance) {
+//     updateClasses(instance);
+//   }
+// });
 
-// Slider animation zoom out
-function moveElement(element, idx, details) {
-  let position = details.positions[idx];
-  let x = details.widthOrHeight * position.distance;
-  let scale_size = 0.7;
-  let scale = 1 - (scale_size - scale_size * position.portion);
-  let style = `translate3d(${x}px, 0px, 0px) scale(${scale})`;
+// // Slider animation zoom out
+// // function moveElement(element, idx, details) {
+// //   let position = details.positions[idx];
+// //   let x = details.widthOrHeight * position.distance;
+// //   let scale_size = 0.7;
+// //   let scale = 1 - (scale_size - scale_size * position.portion);
+// //   let style = `translate3d(${x}px, 0px, 0px) scale(${scale})`;
 
-  element.style.transform = style;
-  element.style["-webkit-transform"] = style;
-}
+// //   element.style.transform = style;
+// //   element.style["-webkit-transform"] = style;
+// // }
 
-// Slider update classes
-function updateClasses(instance) {
-  let slide = instance.details().relativeSlide;
-  let dotAll = document.querySelectorAll(".dot");
+// // Slider update classes
+// function updateClasses(instance) {
+//   let slide = instance.details().relativeSlide;
+//   let dotAll = document.querySelectorAll(".dot");
 
-  dotAll.forEach(function (dot, idx) {
-    idx === slide ? dot.classList.add("dot--active") : dot.classList.remove("dot--active");
-  });
-}
+//   dotAll.forEach(function (dot, idx) {
+//     idx === slide ? dot.classList.add("dot--active") : dot.classList.remove("dot--active");
+//   });
+// }
 
 // Btn top
 const btnTop = document.querySelector(".btn-top");
@@ -224,8 +224,8 @@ servicesLinks.forEach((servicesLink) => {
     let servicesTitleText = servicesLink.children[0].textContent;
     serviceTitle.textContent = servicesTitleText;
 
-    let servicesDescriptionText = servicesLink.children[1].textContent;
-    serviceDescrtiption.textContent = servicesDescriptionText;
+    // let servicesDescriptionText = servicesLink.children[1].textContent;
+    // serviceDescrtiption.textContent = servicesDescriptionText;
 
     servicesLink.classList.add("btn--active");
 
@@ -276,3 +276,47 @@ let phoneMask = IMask(document.querySelector(".form__phone"), {
   mask: "(000) 000-00-00",
   lazy: false
 });
+
+var slider = new KeenSlider("#my-keen-slider", {
+  loop: true,
+  created: function (instance) {
+    document
+      .querySelector(".slider__btn--prev")
+      .addEventListener("click", function () {
+        instance.prev();
+      });
+
+    document
+      .querySelector(".slider__btn--next")
+      .addEventListener("click", function () {
+        instance.next();
+      });
+    var dots_wrapper = document.querySelector(".dots");
+    var slides = document.querySelectorAll(".keen-slider__slide");
+    slides.forEach(function (t, idx) {
+      var dot = document.createElement("button");
+      dot.classList.add("dot");
+      dots_wrapper.appendChild(dot);
+      dot.addEventListener("click", function () {
+        instance.moveToSlide(idx);
+      });
+    });
+    updateClasses(instance);
+  },
+  slideChanged(instance) {
+    updateClasses(instance);
+  }
+});
+
+function updateClasses(instance) {
+  var slide = instance.details().relativeSlide;
+  var arrowLeft = document.getElementById("arrow-left");
+  var arrowRight = document.getElementById("arrow-right");
+
+  var dots = document.querySelectorAll(".dot");
+  dots.forEach(function (dot, idx) {
+    idx === slide
+      ? dot.classList.add("dot--active")
+      : dot.classList.remove("dot--active");
+  });
+}
