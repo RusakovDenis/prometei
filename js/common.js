@@ -320,3 +320,5 @@ function updateClasses(instance) {
       : dot.classList.remove("dot--active");
   });
 }
+
+kissuiScrollAnim.setOption('autoReset', false);
