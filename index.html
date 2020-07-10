@@ -87,7 +87,7 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
-<body style="overflow-y:hidden;">
+<body>
 	<div class="preloader preloader--show">
 		<div class="preloader__circle"></div>
 		<img class="preloader__img" src="img/logo-fire.png" alt="Логотип">
@@ -723,7 +723,7 @@
 		window.onload = () => {
 			setTimeout(() => {
 				preloader.classList.remove("preloader--show");
-				document.body.style.removeProperty("overflow-y");
+				// document.body.style.removeProperty("overflow-y");
 			}, 1500);
 			setTimeout(() => {
 				preloader.style.display = "none";
