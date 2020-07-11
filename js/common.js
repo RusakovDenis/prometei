@@ -84,77 +84,51 @@ const addActiveClass = () => {
 }
 
 // Slider
-// const keenSliderSlideAll = document.querySelectorAll(".keen-slider__slide");
-// const slider = new KeenSlider("#my-keen-slider", {
-//   loop: true,
-//   slides: keenSliderSlideAll.length,
-//   duration: 1500,
-//   initial: 0,
-//   // move: s => {
-//   //   keenSliderSlideAll.forEach((element, idx) => {
-//   //     moveElement(element, idx, s.details());
-//   //   });
-//   // },
-//   created: function (instance) {
-//     // Slider btns
-//     const sliderBtnPrev = document.querySelector(".slider__btn--prev");
+let slider = new KeenSlider("#my-keen-slider", {
+  loop: true,
+  duration: 1300,
+  created: function (instance) {
+    document.querySelector(".slider__btn--prev").addEventListener("click", () => {
+      instance.prev();
+    });
 
-//     sliderBtnPrev.addEventListener("click", () => {
-//       instance.prev();
-//     });
-//     sliderBtnPrev.setAttribute("aria-label", "Предыдущий слайд");
+    // Autoplay
+    setInterval(() => {
+      instance.next();
+    }, 7000);
 
-//     const sliderBtnNext = document.querySelector(".slider__btn--next");
+    document.querySelector(".slider__btn--next").addEventListener("click", () => {
+      instance.next();
+    });
 
-//     sliderBtnNext.addEventListener("click", () => {
-//       instance.next();
-//     });
-//     sliderBtnNext.setAttribute("aria-label", "Следующий слайд");
+    let dots = document.querySelector(".dots");
+    let sliderSlideAll = document.querySelectorAll(".keen-slider__slide");
 
-//     // Dots
-//     const dots = document.getElementById("dots");
+    sliderSlideAll.forEach(function (t, idx) {
+      let dot = document.createElement("button");
+      dot.classList.add("dot");
+      dots.appendChild(dot);
+      dot.addEventListener("click", function () {
+        instance.moveToSlide(idx);
+      });
+    });
+    updateClasses(instance);
+  },
+  slideChanged(instance) {
+    updateClasses(instance);
+  }
+});
 
-//     keenSliderSlideAll.forEach(function (t, idx) {
-//       let dot = document.createElement("button");
+function updateClasses(instance) {
+  let slide = instance.details().relativeSlide;
+  let dotAll = document.querySelectorAll(".dot");
 
-//       dot.classList.add("dot");
-//       dots.appendChild(dot);
-
-//       dot.addEventListener("click", () => {
-//         instance.moveToSlide(idx);
-//       });
-
-//       dot.setAttribute("aria-label", "Слайд");
-//     });
-
-//     updateClasses(instance);
-//   },
-//   slideChanged(instance) {
-//     updateClasses(instance);
-//   }
-// });
-
-// // Slider animation zoom out
-// // function moveElement(element, idx, details) {
-// //   let position = details.positions[idx];
-// //   let x = details.widthOrHeight * position.distance;
-// //   let scale_size = 0.7;
-// //   let scale = 1 - (scale_size - scale_size * position.portion);
-// //   let style = `translate3d(${x}px, 0px, 0px) scale(${scale})`;
-
-// //   element.style.transform = style;
-// //   element.style["-webkit-transform"] = style;
-// // }
-
-// // Slider update classes
-// function updateClasses(instance) {
-//   let slide = instance.details().relativeSlide;
-//   let dotAll = document.querySelectorAll(".dot");
-
-//   dotAll.forEach(function (dot, idx) {
-//     idx === slide ? dot.classList.add("dot--active") : dot.classList.remove("dot--active");
-//   });
-// }
+  dotAll.forEach(function (dot, idx) {
+    idx === slide
+      ? dot.classList.add("dot--active")
+      : dot.classList.remove("dot--active");
+  });
+}
 
 // Btn top
 const btnTop = document.querySelector(".btn-top");
@@ -276,49 +250,3 @@ let phoneMask = IMask(document.querySelector(".form__phone"), {
   mask: "(000) 000-00-00",
   lazy: false
 });
-
-var slider = new KeenSlider("#my-keen-slider", {
-  loop: true,
-  created: function (instance) {
-    document
-      .querySelector(".slider__btn--prev")
-      .addEventListener("click", function () {
-        instance.prev();
-      });
-
-    document
-      .querySelector(".slider__btn--next")
-      .addEventListener("click", function () {
-        instance.next();
-      });
-    var dots_wrapper = document.querySelector(".dots");
-    var slides = document.querySelectorAll(".keen-slider__slide");
-    slides.forEach(function (t, idx) {
-      var dot = document.createElement("button");
-      dot.classList.add("dot");
-      dots_wrapper.appendChild(dot);
-      dot.addEventListener("click", function () {
-        instance.moveToSlide(idx);
-      });
-    });
-    updateClasses(instance);
-  },
-  slideChanged(instance) {
-    updateClasses(instance);
-  }
-});
-
-function updateClasses(instance) {
-  var slide = instance.details().relativeSlide;
-  var arrowLeft = document.getElementById("arrow-left");
-  var arrowRight = document.getElementById("arrow-right");
-
-  var dots = document.querySelectorAll(".dot");
-  dots.forEach(function (dot, idx) {
-    idx === slide
-      ? dot.classList.add("dot--active")
-      : dot.classList.remove("dot--active");
-  });
-}
-
-kissuiScrollAnim.setOption('autoReset', false);
