@@ -87,7 +87,7 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body style="overflow-y:hidden;">
 	<div class="preloader preloader--show">
 		<div class="preloader__circle"></div>
 		<img class="preloader__img" src="img/logo-fire.png" alt="Логотип">
@@ -101,7 +101,7 @@
 			</div>
 			<nav class="nav">
 				<ul class="nav__list">
-					<li class="nav__item"><a class="nav__link" href="#about-us">О компании</a></li>
+					<li class="nav__item"><a class="nav__link" href="#about-us">О нас</a></li>
 					<li class="nav__item"><a class="nav__link" href="#teachers">Преподаватели</a></li>
 					<li class="nav__item"><a class="nav__link" href="#services">Услуги</a></li>
 					<li class="nav__item"><a class="nav__link" href="#reviews">Отзывы</a></li>
@@ -193,7 +193,7 @@
 		<section class="about-us section" id="about-us">
 			<img class="about-us__img" src="img/about-us.webp" alt="Мы">
 			<div class="about-us__card">
-				<h2 class="about-us__title">О компании</h2>
+				<h2 class="about-us__title">О нас</h2>
 				<p class="about-us__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 					tempor
 					incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -282,52 +282,57 @@
 		</section>
 		<section class="services section" id="services">
 			<h2 class="title">Услуги</h2>
-			<div class="stages">
-				<ol class="stages__list">
-					<li class="stages__item">
-						<div class="stages__content">
-							<h3 class="stages__subtitle">Title</h3>
-							<p class="stages__description">Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor, at
-								pulvinar tortor.</p>
-						</div>
-					</li>
-					<li class="stages__item">
-						<div class="stages__content">
-							<h3 class="stages__subtitle">Title</h3>
-							<p class="stages__description">In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse
-								varius volutpat</p>
-						</div>
-					</li>
-					<li class="stages__item">
-						<div class="stages__content">
-							<h3 class="stages__subtitle">Title</h3>
-							<p class="stages__description">Aenean condimentum odio a bibendum rhoncus. Ut mauris felis, volutpat eget.
-							</p>
-						</div>
-					</li>
-					<li class="stages__item">
-						<div class="stages__content">
-							<h3 class="stages__subtitle">Title</h3>
-							<p class="stages__description">Aenean condimentum odio a bibendum rhoncus. Ut mauris felis, volutpat eget
-							</p>
-						</div>
-					</li>
-					<li class="stages__item">
-						<div class="stages__content">
-							<h3 class="stages__subtitle">Title</h3>
-							<p class="stages__description">Aenean condimentum odio a bibendum rhoncus. Ut mauris felis, volutpat eget
-							</p>
-						</div>
-					</li>
-					<li class="stages__item">
-						<div class="stages__content">
-							<h3 class="stages__subtitle">Title</h3>
-							<p class="stages__description">Vestibulum porttitor lorem sed pharetra dignissim. Nulla maximus, dui a
-								tristique</p>
-						</div>
-					</li>
-					<li></li>
-				</ol>
+			<div class="stages-wrap">
+				<div class="stages">
+					<ol class="stages__list">
+						<li class="stages__item">
+							<div class="stages__content">
+								<h3 class="stages__subtitle">Title</h3>
+								<p class="stages__description">Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor, at
+									pulvinar tortor.</p>
+							</div>
+						</li>
+						<li class="stages__item">
+							<div class="stages__content">
+								<h3 class="stages__subtitle">Title</h3>
+								<p class="stages__description">In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse
+									varius volutpat</p>
+							</div>
+						</li>
+						<li class="stages__item">
+							<div class="stages__content">
+								<h3 class="stages__subtitle">Title</h3>
+								<p class="stages__description">Aenean condimentum odio a bibendum rhoncus. Ut mauris felis, volutpat
+									eget.
+								</p>
+							</div>
+						</li>
+						<li class="stages__item">
+							<div class="stages__content">
+								<h3 class="stages__subtitle">Title</h3>
+								<p class="stages__description">Aenean condimentum odio a bibendum rhoncus. Ut mauris felis, volutpat
+									eget
+								</p>
+							</div>
+						</li>
+						<li class="stages__item">
+							<div class="stages__content">
+								<h3 class="stages__subtitle">Title</h3>
+								<p class="stages__description">Aenean condimentum odio a bibendum rhoncus. Ut mauris felis, volutpat
+									eget
+								</p>
+							</div>
+						</li>
+						<li class="stages__item">
+							<div class="stages__content">
+								<h3 class="stages__subtitle">Title</h3>
+								<p class="stages__description">Vestibulum porttitor lorem sed pharetra dignissim. Nulla maximus, dui a
+									tristique</p>
+							</div>
+						</li>
+						<li></li>
+					</ol>
+				</div>
 			</div>
 			<div class="services-wrap">
 				<div class="services__card">
@@ -669,14 +674,14 @@
 					</svg>
 					+7 (918) 552-66-32
 				</a>
-				<a class="footer__email" href="mailto:prometei@gmail.ru">
+				<a class="footer__email" href="mailto:prometheus.manager@gmail.com">
 					<svg class="footer__icon-email" width="24" height="24" stroke="#fc5741" stroke-width="1.5" fill="none"
 						aria-hidden="true">
 						<path d="M2 5h20v14H2z" />
 						<path stroke-linecap="round" d="M2 5l10 9 10-9" />
 						<path d="M2 19l6.825-7.8M22 19l-6.844-7.822" />
 					</svg>
-					prometei@gmail.ru
+					prometheus.manager@gmail.com
 				</a>
 			</div>
 			<div class="footer__social social">
@@ -735,7 +740,7 @@
 		window.onload = () => {
 			setTimeout(() => {
 				preloader.classList.remove("preloader--show");
-				// document.body.style.removeProperty("overflow-y");
+				document.body.style.removeProperty("overflow-y");
 			}, 1500);
 			setTimeout(() => {
 				preloader.style.display = "none";
@@ -743,9 +748,8 @@
 		}
 	</script>
 	<script src="js/keen-slider.min.js"></script>
-	<script src="js/scrollanim.min.js"></script>
 	<script src="js/imask.min.js"></script>
-	<script src="js/common.js"></script>
+	<script async src="js/common.js"></script>
 	<script>
 		window.addEventListener("scroll", () => {
 			setTimeout(() => {

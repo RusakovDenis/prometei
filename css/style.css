@@ -228,6 +228,7 @@ body {
 
 .header {
   position: fixed;
+  top: 0;
   left: 0;
   z-index: 3;
   display: -webkit-box;
@@ -1165,6 +1166,14 @@ body {
     0.3s -webkit-box-shadow cubic-bezier(0.4, 0, 0.6, 1);
   transition: 0.3s background-color cubic-bezier(0.4, 0, 0.6, 1), 0.3s color cubic-bezier(0.4, 0, 0.6, 1),
     0.3s -webkit-box-shadow cubic-bezier(0.4, 0, 0.6, 1);
+  -webkit-transition: 0.3s background-color cubic-bezier(0.4, 0, 0.6, 1), 0.3s color cubic-bezier(0.4, 0, 0.6, 1),
+    0.3s -webkit-box-shadow cubic-bezier(0.4, 0, 0.6, 1);
+  transition: 0.3s background-color cubic-bezier(0.4, 0, 0.6, 1), 0.3s color cubic-bezier(0.4, 0, 0.6, 1),
+    0.3s -webkit-box-shadow cubic-bezier(0.4, 0, 0.6, 1);
+  -webkit-transition: 0.3s background-color cubic-bezier(0.4, 0, 0.6, 1), 0.3s color cubic-bezier(0.4, 0, 0.6, 1),
+    0.3s -webkit-box-shadow cubic-bezier(0.4, 0, 0.6, 1);
+  transition: 0.3s background-color cubic-bezier(0.4, 0, 0.6, 1), 0.3s color cubic-bezier(0.4, 0, 0.6, 1),
+    0.3s -webkit-box-shadow cubic-bezier(0.4, 0, 0.6, 1);
   transition: 0.3s box-shadow cubic-bezier(0.4, 0, 0.6, 1), 0.3s background-color cubic-bezier(0.4, 0, 0.6, 1),
     0.3s color cubic-bezier(0.4, 0, 0.6, 1);
   transition: 0.3s box-shadow cubic-bezier(0.4, 0, 0.6, 1), 0.3s background-color cubic-bezier(0.4, 0, 0.6, 1),
@@ -1314,10 +1323,22 @@ body {
 
 /* Stages */
 
+.stages-wrap {
+  /* background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(var(--colorOrange, #fc5741)),
+    to(var(--colorBlue, #201f87))
+  );
+  background: linear-gradient(30deg, var(--colorOrange, #fc5741) 0%, var(--colorBlue, #201f87) 100%);
+  background-size: 400% 400%;
+  height: 100%; */
+  padding: 250px 0;
+}
+
 .stages {
   width: 100%;
-  margin: 250px 0;
-  text-align: center;
 }
 
 @media (max-width: 991px) {
@@ -1336,7 +1357,7 @@ body {
 .stages__item {
   position: relative;
   display: inline-block;
-  width: calc(100% / 8);
+  width: calc(100% / 6);
   height: 5px;
   background-color: var(--colorOrange);
 }
@@ -1365,6 +1386,15 @@ body {
 .stages__item:first-child .stages__content,
 .stages__item:last-child .stages__content {
   width: calc(100% + 200px);
+}
+
+@media (max-width: 991px) {
+  .stages__item:first-child .stages__content,
+  .stages__item:last-child .stages__content {
+    width: 280px;
+    width: auto;
+    height: auto;
+  }
 }
 
 @media (max-width: 991px) {
@@ -1412,7 +1442,7 @@ body {
   position: absolute;
   left: calc(100% + 25px);
   width: 100%;
-  max-width: 200px;
+  max-width: 150px;
   margin-right: 10px;
   padding: 15px;
   text-align: left;
@@ -1426,6 +1456,12 @@ body {
     position: static;
     max-width: 300px;
     margin: 0 auto 25px;
+  }
+}
+
+@media (max-width: 360px) {
+  .stages__content {
+    width: auto;
   }
 }
 
@@ -1446,6 +1482,11 @@ body {
 .stages__item:nth-child(even) .stages__content {
   top: calc(100% + 40px);
   border-radius: 0 15px 15px 15px;
+}
+
+.stages__item:nth-child(6) .stages__content {
+  /* left: 100px !important; */
+  /* right: auto; */
 }
 
 @media (max-width: 991px) {
@@ -1503,10 +1544,19 @@ body {
 .services-wrap {
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(311px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
   grid-auto-flow: dense;
   padding-top: 30px;
+  -ms-grid-column-align: center;
+  justify-self: center;
+}
+
+@media (max-width: 1180px) {
+  .services-wrap {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 991px) {
@@ -1682,6 +1732,13 @@ body {
   cursor: default;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+@media (max-width: 991px) {
+  .service__content {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .service--open {
@@ -2259,7 +2316,7 @@ body {
 }
 
 .contacts__title {
-  margin: 0;
+  margin: 0 0 10px 0;
   font-size: 3rem;
 }
 
@@ -2387,6 +2444,11 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: auto;
+  margin: 0 auto 10px auto;
   font-weight: bold;
   text-decoration: none;
   color: var(--colorDark, #222222);

@@ -84,22 +84,31 @@ const addActiveClass = () => {
 }
 
 // Slider
+
 let slider = new KeenSlider("#my-keen-slider", {
   loop: true,
   duration: 1300,
   created: function (instance) {
-    document.querySelector(".slider__btn--prev").addEventListener("click", () => {
+    const sliderBtnPrev = document.querySelector(".slider__btn--prev");
+
+    sliderBtnPrev.addEventListener("click", () => {
       instance.prev();
     });
+
+    sliderBtnPrev.setAttribute("aria-label", "Предыдущий слайд");
 
     // Autoplay
     setInterval(() => {
       instance.next();
     }, 7000);
 
-    document.querySelector(".slider__btn--next").addEventListener("click", () => {
+    const sliderBtnNext = document.querySelector(".slider__btn--next");
+
+    sliderBtnNext.addEventListener("click", () => {
       instance.next();
     });
+
+    sliderBtnNext.setAttribute("aria-label", "Следующий слайд");
 
     let dots = document.querySelector(".dots");
     let sliderSlideAll = document.querySelectorAll(".keen-slider__slide");
@@ -111,6 +120,8 @@ let slider = new KeenSlider("#my-keen-slider", {
       dot.addEventListener("click", function () {
         instance.moveToSlide(idx);
       });
+
+      dot.setAttribute("aria-label", "Слайд");
     });
     updateClasses(instance);
   },
