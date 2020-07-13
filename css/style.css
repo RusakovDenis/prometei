@@ -1486,7 +1486,7 @@ body {
 }
 
 .stages__item:nth-child(odd) .stages__content::before {
-  bottom: -16px;
+  bottom: -15px;
   border-width: 16px 16px 0 0;
   border-color: #ffffff transparent transparent transparent;
 }
