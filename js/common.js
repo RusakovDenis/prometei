@@ -83,11 +83,26 @@ const addActiveClass = () => {
   });
 }
 
-// Slider
+// Slider'
 
-let slider = new KeenSlider("#my-keen-slider", {
+const keenSlider = document.getElementById("my-keen-slider");
+let intervalSlider = 0;
+let sliderTime = 10000;
+let loopTime = 1500;
+
+// Autoplay
+function autoplay(run) {
+  clearInterval(intervalSlider);
+  intervalSlider = setInterval(() => {
+    if (run && slider) {
+      slider.next();
+    }
+  }, sliderTime);
+}
+
+const slider = new KeenSlider(keenSlider, {
   loop: true,
-  duration: 1300,
+  duration: loopTime,
   created: function (instance) {
     const sliderBtnPrev = document.querySelector(".slider__btn--prev");
 
@@ -96,11 +111,6 @@ let slider = new KeenSlider("#my-keen-slider", {
     });
 
     sliderBtnPrev.setAttribute("aria-label", "Предыдущий слайд");
-
-    // Autoplay
-    setInterval(() => {
-      instance.next();
-    }, 7000);
 
     const sliderBtnNext = document.querySelector(".slider__btn--next");
 
@@ -127,7 +137,13 @@ let slider = new KeenSlider("#my-keen-slider", {
   },
   slideChanged(instance) {
     updateClasses(instance);
-  }
+  },
+  dragStart: () => {
+    autoplay(false);
+  },
+  dragEnd: () => {
+    autoplay(true);
+  },
 });
 
 function updateClasses(instance) {
@@ -141,20 +157,32 @@ function updateClasses(instance) {
   });
 }
 
+// Autoplay event mouse
+
+keenSlider.addEventListener("mouseover", () => {
+  autoplay(false);
+});
+
+keenSlider.addEventListener("mouseout", () => {
+  autoplay(true);
+});
+
+autoplay(true);
+
 // Btn top
 const btnTop = document.querySelector(".btn-top");
 let interval = 0;
 
 const scrollStep = () => {
   if (window.pageYOffset === 0) {
-    clearInterval(interval);
+    clearInterval(intervalSlider);
   }
 
   window.scroll(0, window.pageYOffset - 50);
 }
 
 btnTop.addEventListener("click", () => {
-  interval = setInterval(scrollStep, 15);
+  intervalSlider = setInterval(scrollStep, 15);
 
   scrollStep();
 });
